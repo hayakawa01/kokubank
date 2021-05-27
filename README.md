@@ -1,24 +1,50 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                 | Type    | Options                  |
+| ---------------------- | ------- | ------------------------ |
+| nickname               | string  | null: false              |
+| email                  | string  | null: false, unique:true |
+| encrypted_password     | string  | null: false              |
+| family_name            | string  | null: false              |
+| first_name             | string  | null: false              |
+| family_name_kana       | string  | null: false              |
+| first_name_kana        | string  | null: false              |
+| prefecture_id          | integer | null: false              |
+| career_id              | integer | null: false              |
+| favorite_subject_id    | integer | null: false              |
+| introduction           | text    |                          |
 
-* Ruby version
+### Association
+has_many: posts
+has_many: comments
 
-* System dependencies
 
-* Configuration
+## posts テーブル
 
-* Database creation
+| Column                 | Type       | Options                  |
+| ---------------------- | ---------- | ------------------------ |
+| class_name             | string     | null: false              |
+| detail                 | text       | null: false              |
+| grade_id               | integer    | null: false              |
+| subject_id             | integer    | null: false              |
+| unit_id                | integer    | null: false              |
+| user                   | references | foreign_key: true        |
 
-* Database initialization
+### Association
+belongs_to: user
+has_many: comments
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## comments テーブル
 
-* Deployment instructions
+| Column                 | Type       | Options                  |
+| ---------------------- | ---------- | ------------------------ |
+| text                   | string     | null: false              |
+| user                   | references | foreign_key: true        |
+| post                   | references | foreign_key: true        |
 
-* ...
+### Association
+belongs_to: user
+belongs_to: post
