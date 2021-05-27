@@ -13,3 +13,105 @@
  *= require_tree .
  *= require_self
  */
+/* 全体指定*/
+ * {
+   box-sizing: border-box;
+ }
+
+ h1,h2,h3,h4,h5,h6{
+   line-height: 2;
+ }
+
+ h1{
+   font-size: 2em;
+ }
+
+ h2{
+   font-size: 1.2em;
+ }
+
+/* ヘッダー */
+header{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:rgba(70, 75, 75, 0.071);
+}
+
+.app-info{
+  text-decoration: none;
+}
+.lists-right{
+  display: flex;
+}
+.login{
+  padding-right: 20px;
+}
+
+/* メイン(index)*/
+.main{
+  height: 100vh - 80px - 100px;
+}
+.main-message{
+  text-align: center;
+}
+
+/* 投稿一覧*/
+.post-contents{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.post-contents>.title{
+  font-size: 4vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.post-contents>.subtitle{
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-transform: none;
+  color:red;
+  font-weight: bold;
+}
+
+.post-lists{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-lists>.list{
+  width: 60vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+.post-img{
+  width: 50vh;
+  height: 20vh;
+}
+
+.post-info{
+  width: 50vh;
+}
+
+.post-name{
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+
+/* フッター */
+footer{
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  text-align: center;
+  bottom: 0;
+}
