@@ -1,2 +1,101 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%= render 'shared/header' %>
+
+<div class='main'>
+  <%# メインメッセージ %>
+  <div class="main-message">
+    <h1>KOKUBANKへようこそ!</h1>
+    <h2>先生方の黒板をのぞきに行きませんか?</h2>
+    <p>＃KOKUBANKは板書写真の共有アプリです＃</p>
+  </div>
+  <%# 投稿一覧 %>
+  <div class="post-contents">
+    <h2 class='title'>ラインナップ</h2>
+    <div class="subtitle">
+      新規投稿黒板
+    </div>
+    <ul class='post-lists'>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo1.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              算数 3年 わり算
+            </h3>
+          </div>
+        <% end %>
+      </li>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo2.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              社会 6年 政治
+            </h3>
+          </div>
+        <% end %>
+      </li>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo3.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              国語 5年 ことわざ
+            </h3>
+          </div>
+        <% end %>
+      </li><li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo1.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              算数 3年 わり算
+            </h3>
+          </div>
+        <% end %>
+      </li>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo2.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              社会 6年 政治
+            </h3>
+          </div>
+        <% end %>
+      </li>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo3.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              国語 5年 ことわざ
+            </h3>
+          </div>
+        <% end %>
+      </li>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo1.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              算数 3年 わり算
+            </h3>
+          </div>
+        <% end %>
+      </li>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag('bansyo2.jpg',class:'post-img') %>
+          <div class="post-info">
+            <h3 class='post-name'>
+              社会 6年 政治
+            </h3>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <%# 投稿一覧 %>
+</div>
+
+<%= render 'shared/footer' %>
