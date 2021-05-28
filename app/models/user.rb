@@ -26,5 +26,6 @@ class User < ApplicationRecord
       validates :favorite_subject_id
     end
   end
+  validates :password,format:{with: /\A(?=.*[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は、半角英数字混合での入力が必須です"}
   validates :introduction, length: {maximum: 1000}
 end

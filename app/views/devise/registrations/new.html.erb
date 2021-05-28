@@ -1,41 +1,89 @@
-<div class='form-wrap'>
-  <%= form_with model: @user, url: '/' ,local: true  do |f| %>
+<%= render 'shared/header' %>
+
+<%= form_with model: @user, url: '/' ,local: true,class:'registration-main'  do |f| %>
+  <div class='form-wrap'>
     <div class='form-header'>
       <h2>ユーザー登録</h2>
     </div>
+   <%= render 'shared/error_messages', model: f.object %>
+
     <div class='form-group'>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label 'ニックネーム' %>
       </div>
+        <%= f.text_field :nickname, maxlength:"40", autofocus: true%>
     </div>
-    <div class= 'form-group'>
+    <div class='form-group'>
       <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.label :email %>
       </div>
+        <%= f.email_field :email,class:'input-field' %>
     </div>
-    <div class= 'form-group'>
+    <div class='form-group'>
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.label 'パスワード' %>
       </div>
+        <%= f.password_field :password,class:'input-field' %>
     </div>
-
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label 'パスワード(確認用)' %>
+      </div>
+        <%= f.password_field :password_confirmation ,class:'input-field'%>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '名字' %>
+      </div>
+        <%= f.text_area :family_name,class:'input-field' %>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '名前' %>
+      </div>
+        <%= f.text_area :first_name,class:'input-field' %>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '名字(カナ)' %>
+      </div>
+        <%= f.text_area :family_name_kana ,class:'input-field' %>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '名前(カナ)' %>
+      </div>
+        <%= f.text_area :first_name_kana,class:'input-field'  %>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '勤務都道府県' %>
+      </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{},{class:'prefecture-select'}) %>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '勤務年数' %>
+      </div>
+        <%= f.collection_select(:career_id, Career.all, :id, :name,{},{class:'career-select'})%>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '得意教科' %>
+      </div>
+        <%= f.collection_select(:favorite_subject_id, FavoriteSubject.all, :id, :name,{},{class:'favorite-subject-select'})%>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label '自己紹介文(任意)' %>
+      </div>
+        <%= f.text_area :introduction ,class:'input-field'%>
+    </div>
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録する" ,class:'registration-btn'%>
       </div>
-  <% end %>
-</div>
-<%= render "devise/shared/links" %>
-
-<div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">ニックネーム</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
   </div>
+<% end %>
+
+<%= render 'shared/footer' %>
+
