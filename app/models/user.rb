@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    with_options format:{with: /\A[ぁ-んァ-ヶ-ー龥々ー]+\z/, message: 'は、全角での入力が必要です'} do
+    with_options format:{with:  /\A[ぁ-んァ-ヶー-龥々ー]+\z/, message: 'は、全角での入力が必要です'} do
       validates :family_name
       validates :first_name      
     end
