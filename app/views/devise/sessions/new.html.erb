@@ -1,0 +1,28 @@
+<%= render 'shared/header' %>
+
+<%= form_with model: @user, url: user_session_path  ,local: true ,class:'login-main' do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h2>ユーザー登録</h2>
+    </div>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label :email %>
+      </div>
+        <%= f.email_field :email %>
+    </div>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label 'パスワード' %>
+      </div>
+        <%= f.password_field :password %>
+    </div>
+      <div class="actions">
+        <%= f.submit "ログインする",class:'login-btn' %>
+      </div>
+  </div>
+<% end %>
+
+<%= render 'shared/footer' %>
