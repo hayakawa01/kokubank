@@ -1,5 +1,5 @@
 class Unit < ActiveHash::Base
-  self.dara = [
+  self.data = [
     {id: 1, name: "--"},
     {id: 2, name: "漢字"},
     {id: 3, name: "かけ算"},
@@ -12,7 +12,8 @@ class Unit < ActiveHash::Base
     {id:10, name: "調理実習（ゆでる）"},
     {id:11, name: "学校たんけん"},
     {id:12, name: "自主・自立"},
-    {id:13, name: "伝統を受け継ぐ"}
+    {id:13, name: "伝統を受け継ぐ"},
+    {id:14, name: "その他"}
   ]
 
   include ActiveHash::Associations
