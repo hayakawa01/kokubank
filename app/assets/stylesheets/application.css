@@ -112,19 +112,19 @@ footer{
 .post-img{
   width: 50vh;
   height: 20vh;
+  margin-left: 32px;
 }
 
 .post-info{
   width: 50vh;
+  margin-left: 32px;
 }
 
 .post-name{
   font-size: 2.5vh;
   text-align: center;
 }
-.nickname{
-  
-}
+
 
 
 

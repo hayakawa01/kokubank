@@ -17,9 +17,7 @@
       <% @posts.each do |post| %>
         <li class='list'>
           <%= link_to '#'  do %>
-            <div class='post-img-content'>
               <%= image_tag post.image,class:'post-img' %>
-            </div>
             <div class='post-info'>
               <h3 class='post-name'>
                 <%= post.class_name %><%= post.user.nickname %>
