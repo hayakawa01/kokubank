@@ -10,6 +10,7 @@ ja:
         taken: はすでに存在します
     models:
       user: ユーザー
+      post: 投稿
     attributes:
       user:
         id: ID
@@ -25,6 +26,13 @@ ja:
         career_id: 勤務年数
         favorite_subject_id: 得意教科
         introduction: 自己紹介
+      post:
+        class_name: 授業名
+        detail: 授業の詳細
+        grade_id: 学年
+        subject_id: 教科
+        unit_id: 単元
+        image: 画像
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
