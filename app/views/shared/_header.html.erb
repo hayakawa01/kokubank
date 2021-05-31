@@ -3,17 +3,15 @@
     <%= link_to image_tag('logo.png',class:"kokubank-icon"), '/'%>
   </div>
   <div class='nav'>
-    <ul class='nav-right'>
-      <li><%= link_to 'KOKUBANKとは？','/' %></li>
-      <li><%= link_to '投稿する',new_post_path %></li>
-    </ul>
     <ul class='lists-right'>
+      <li><%= link_to 'KOKUBANKとは？','/' , class:'list-right'%></li>
+      <li><%= link_to '投稿する',new_post_path, class:'list-right' %></li>
       <%if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "/", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', user_registration_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to current_user.nickname, "/", class:'list-right' %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'list-right' %></li>
       <% else %>  
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class:'list-right' %></li>
+        <li><%= link_to '新規登録', new_user_registration_path,class:'list-right' %></li>
       <% end %>
     </ul>
     <ul>
