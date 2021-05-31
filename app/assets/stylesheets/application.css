@@ -42,14 +42,12 @@ header{
   border-bottom:1px solid gainsboro ;
 }
 
-.app-info{
-  text-decoration: none;
-}
 .lists-right{
   display: flex;
 }
-.login{
-  padding-right: 20px;
+
+.list-right{
+  padding-right: 40px;
 }
 
 /* フッター */
@@ -66,7 +64,14 @@ footer{
   height: 100vh - 80px - 100px;
 }
 .main-message{
+  font-size: large;
   text-align: center;
+  background-image: url(main.message.jpg);
+  background-size: cover;
+  color: #FFF;
+  text-shadow: 1px 0 5px black;
+  height: 20vh;
+  padding-top: 25px;
 }
 
 /* 投稿一覧*/
@@ -78,7 +83,7 @@ footer{
 }
 
 .post-contents>.title{
-  font-size: 4vh;
+  font-size: 3vh;
   line-height: 1.4;
   font-weight: bold;
 }
@@ -116,8 +121,11 @@ footer{
 .post-name{
   font-size: 2.5vh;
   text-align: center;
-  text-decoration: none;
 }
+.nickname{
+  
+}
+
 
 
 /* 新規登録ページ */
