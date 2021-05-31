@@ -14,85 +14,20 @@
       新規投稿黒板
     </div>
     <ul class='post-lists'>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo1.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              算数 3年 わり算
-            </h3>
-          </div>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo2.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              社会 6年 政治
-            </h3>
-          </div>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo3.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              国語 5年 ことわざ
-            </h3>
-          </div>
-        <% end %>
-      </li><li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo1.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              算数 3年 わり算
-            </h3>
-          </div>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo2.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              社会 6年 政治
-            </h3>
-          </div>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo3.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              国語 5年 ことわざ
-            </h3>
-          </div>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo1.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              算数 3年 わり算
-            </h3>
-          </div>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to '#' do %>
-          <%= image_tag('bansyo2.jpg',class:'post-img') %>
-          <div class="post-info">
-            <h3 class='post-name'>
-              社会 6年 政治
-            </h3>
-          </div>
-        <% end %>
-      </li>
+      <% @posts.each do |post| %>
+        <li class='list'>
+          <%= link_to '#'  do %>
+            <div class='post-img-content'>
+              <%= image_tag post.image,class:'post-img' %>
+            </div>
+            <div class='post-info'>
+              <h3 class='post-name'>
+                <%= post.class_name %><%= post.user.nickname %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <%# 投稿一覧 %>

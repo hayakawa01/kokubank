@@ -4,10 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts
+
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :prefecture
-  belongs_to :career
-  belongs_to :favorite_subject
+    belongs_to :prefecture
+    belongs_to :career
+    belongs_to :favorite_subject
 
 
   with_options presence: true do
