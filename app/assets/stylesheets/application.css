@@ -39,6 +39,7 @@ header{
   justify-content: space-between;
   align-items: center;
   background-color:#FFF;
+  border-bottom:1px solid gainsboro ;
 }
 
 .app-info{
@@ -201,6 +202,9 @@ footer{
   font-size: 22px;
   font-weight: bold;
   text-align: center;
+  background-color: rgb(135, 180, 235);
+  color: #FFF;
+
 }
 .img-upload{
   padding: 2vh 0;
