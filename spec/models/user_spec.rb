@@ -151,6 +151,24 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("名前カナは、全角カタカナでの入力が必要です")
       end
 
+      it 'prefecture_id = 1では登録できない'do
+        @user.prefecture_id = 1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("勤務都道府県は1以外の値にしてください")
+      end
+
+      it 'career_id = 1では登録できない'do
+        @user.career_id = 1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("勤務年数は1以外の値にしてください")
+        end
+
+      it 'favorite_subject_id = 1では登録できない'do
+        @user.favorite_subject_id = 1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("得意教科は1以外の値にしてください")
+      end
+
     end 
  end
 end
