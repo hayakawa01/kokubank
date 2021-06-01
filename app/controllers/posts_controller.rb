@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post,only:[:show,:edit,:update,:destory]
-  before_action :correct_edit,only:[:edit,:update,:destory]
+  before_action :set_post,only:[:show,:edit,:update,:destroy]
+  before_action :correct_edit,only:[:edit,:update,:destroy]
   
 
   def index
@@ -34,8 +34,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def destory
-    @post.destory
+  def destroy
+    @post.destroy
     redirect_to root_path
   end
 
