@@ -1,0 +1,53 @@
+<%= render 'shared/header' %>
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= "#{@user.nickname}" %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">勤務都道府県</th>
+            <td class="table__col2"><%= "#{@user.prefecture.name}" %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">勤務年数</th>
+            <td class="table__col2"><%= "#{@user.career.name}" %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">得意教科</th>
+            <td class="table__col2"><%= "#{@user.favorite_subject.name}" %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">自己紹介文</th>
+            <td class="table__col2"><%= "#{@user.introduction}" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの投稿一覧"%>
+      </h2>
+      <div class="user__board">
+        <% @posts.each do |post| %>
+        <div class="board">
+          <%= link_to image_tag(post.image.variant(resize: '400x500'), class: :post__img), post_path(post.id) %>
+          <div class="board__body">
+            <%= link_to "#{post.class_name}", post_path(post.id), class: :board__title%>
+            <p class="board__summary">
+              <%= "#{post.grade.name}" %>
+              <%= "#{post.subject.name}" %>
+              <%= "#{post.unit.name}" %>
+            </p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'shared/footer' %>
