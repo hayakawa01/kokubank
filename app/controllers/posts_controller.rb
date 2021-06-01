@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  before_action :set_post,only:[:show,:edit,:update]
+  before_action :correct_edit,only:[:edit, :update]
+  
+
   def index
     @posts = Post.includes(:user).order('id DESC')
   end
@@ -17,18 +21,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
-  def edit
-    @post = Post.find(params[:id])
-    unless user_signed_in? && current_user.id == @post.user_id
-      redirect_to root_path
-    end
+  def edit    
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to action: :show
     else
@@ -36,8 +34,21 @@ class PostsController < ApplicationController
     end
   end
 
+  
   private
+
   def post_params
     params.require(:post).permit(:image,:class_name, :detail, :grade_id, :subject_id, :unit_id).merge(user_id: current_user.id)
   end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def correct_edit
+    unless user_signed_in? && current_user.id == @post.user_id
+      redirect_to root_path
+    end
+  end
+  
 end
