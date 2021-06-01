@@ -32,6 +32,11 @@
    text-align: center;
  }
 
+ img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
 /* ヘッダー */
 header{
   height: 80px;
@@ -52,11 +57,14 @@ header{
 
 /* フッター */
 footer{
-  height: 100px;
+  height: 80px;
   border-top: 1px solid #eaeaea;
   color: #777;
   text-align: center;
   bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* メイン(index)*/
@@ -201,9 +209,12 @@ footer{
   background-color: rgb(237, 235, 235);
 }
 
+.new-post-form{
+  height: 100vh - 100px ;
+}
 .new-post-main{
   width: 70vw;
-  padding: 10vh 10vw;
+  padding: 5vh 10vw;
   background-color: white;
 }
 .new-post-title{
@@ -262,4 +273,57 @@ footer{
   display: flex;
   justify-content: center;
   height: 40px;
+}
+
+/* 投稿詳細ページ*/
+.post__heading{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.post__user{
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+}
+.post__image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.post__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+  border-top: 1px dotted #dcdcdc
+}
+.detail__title{
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.post__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.post__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+.post__btn:hover{
+  color: #fff;
+  background: #999;
 }

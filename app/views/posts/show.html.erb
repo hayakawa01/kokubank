@@ -1,0 +1,32 @@
+<%= render 'shared/header' %>
+
+<main class="main">
+  <div class="inner">
+    <div class="post__wrapper">
+      <p class="post__heading">
+        <%= "#{@post.class_name}"%>
+      </p>
+      <%= link_to "#{@post.user.nickname} の黒板", "#", class: "post__user"%>
+      <% if user_signed_in?  && @post.user_id == current_user.id %>
+        <div class="post__manage">
+          <%= link_to "編集する", edit_post_path(@post), class: "post__btn" %>
+          <%= link_to "削除する", post_path(@post.id),method: :delete, class: "post__btn" %>
+        </div>
+      <% end %>
+      <div class="post__image">
+        <%= image_tag @post.image, class:"post___image" %>
+      </div>
+      <div class="post__body">
+        <div class="post__detail">
+          <p class="detail__title">授業の詳細</p>
+          <p class="detail__text">
+            <%= "#{@post.detail}" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%= render 'shared/footer' %>
+
