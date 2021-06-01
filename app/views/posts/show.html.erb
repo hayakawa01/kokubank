@@ -3,18 +3,18 @@
 <main class="main">
   <div class="inner">
     <div class="post__wrapper">
-      <p class="post__hedding">
+      <p class="post__heading">
         <%= "#{@post.class_name}"%>
       </p>
-      <%#= link_to "by #{@prototype.user.name}", user_path(@prototype.user_id), class: :prototype__user %>
+      <%= link_to "#{@post.user.nickname} の黒板", "#", class: "post__user"%>
       <% if user_signed_in?  && @post.user_id == current_user.id %>
         <div class="post__manage">
-          <%= link_to "編集する", edit_post_path(@post), class: :post__btn %>
-          <%= link_to "削除する", post_path(@post.id),method: :delete, class: :post__btn %>
+          <%= link_to "編集する", edit_post_path(@post), class: "post__btn" %>
+          <%= link_to "削除する", post_path(@post.id),method: :delete, class: "post__btn" %>
         </div>
       <% end %>
       <div class="post__image">
-        <%= image_tag @post.image %>
+        <%= image_tag @post.image, class:"post___image" %>
       </div>
       <div class="post__body">
         <div class="post__detail">
