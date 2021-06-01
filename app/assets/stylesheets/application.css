@@ -341,6 +341,10 @@ footer{
   width: 70%;
   margin: 0 auto;
 }
+
+.edit-info{
+  text-align: center;
+}
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;

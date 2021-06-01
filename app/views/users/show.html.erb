@@ -3,8 +3,13 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの情報"%>
+        <%= "#{@user.nickname}のプロフィール"%>
       </h2>
+      <% if current_user.id == @user.id && user_signed_in? %>
+        <div class='edit-info'>
+          <%= link_to 'プロフィールの編集',edit_user_path(@user.id) %>  
+        </div>
+      <% end %>
       <table class="table">
         <tbody>
           <tr>
@@ -30,7 +35,7 @@
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの投稿一覧"%>
+        <%= "#{@user.nickname}さんのBANK"%>
       </h2>
       <div class="user__board">
         <% @posts.each do |post| %>
