@@ -6,7 +6,7 @@
       <p class="post__heading">
         <%= "#{@post.class_name}"%>
       </p>
-      <%= link_to "#{@post.user.nickname} の黒板", "#", class: "post__user"%>
+      <%= link_to "#{@post.user.nickname} の黒板", user_path(@post.user_id), class: "post__user"%>
       <% if user_signed_in?  && @post.user_id == current_user.id %>
         <div class="post__manage">
           <%= link_to "編集する", edit_post_path(@post), class: "post__btn" %>
@@ -20,7 +20,7 @@
         <div class="post__detail">
           <p class="detail__title">授業の詳細</p>
           <p class="detail__text">
-            <%= "#{@post.detail}" %>
+            <%= safe_join(@post.detail.split("\n"),tag(:br))%>
           </p>
         </div>
       </div>
