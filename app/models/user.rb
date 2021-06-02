@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   # updateの際にパスワードが不要になるコード
   def update_without_current_password(params, *options)
@@ -46,4 +47,10 @@ class User < ApplicationRecord
   end
   validates :password,format:{with: /\A(?=.*[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は、半角英数字混合での入力が必須です"},on: :create
   validates :introduction, length: {maximum: 1000}
+
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
+ 
 end
