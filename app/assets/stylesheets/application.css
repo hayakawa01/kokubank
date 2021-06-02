@@ -37,6 +37,12 @@
   vertical-align: bottom;
 }
 
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 /* ヘッダー */
 header{
   height: 80px;
@@ -71,7 +77,7 @@ footer{
 
 /* メイン(index)*/
 .main{
-  height: 100vh - 80px - 100px;
+  flex: 1;
 }
 .main-message{
   font-size: large;
@@ -94,7 +100,7 @@ footer{
 
 .post-contents>.title{
   font-size: 3vh;
-  line-height: 1.4;
+  line-height: 1.4px;
   font-weight: bold;
 }
 
