@@ -335,6 +335,10 @@ footer{
   background: #999;
 }
 
+/* 詳細 */
+
+
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
