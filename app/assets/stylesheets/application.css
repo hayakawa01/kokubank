@@ -265,16 +265,17 @@ footer{
   height: 25px;
 }
 .post-btn{
-  width: 30%;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
   color: #fff;
   background-color: red;
   border: 1px solid red;
-  border-radius: 10px;  
+  border-radius: 100px;  
   display: flex;
   justify-content: center;
-  height: 40px;
+  line-height: 48px;
+  font-size: 18px;
 }
 
 /* 投稿詳細ページ*/
@@ -305,7 +306,9 @@ footer{
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
-  border-top: 1px dotted #dcdcdc
+  border-top: 1px dotted #dcdcdc;
+  width: 50%;
+  margin: 0 auto 10px;
 }
 .detail__title{
   font-size: 20px;
@@ -333,6 +336,49 @@ footer{
 .post__btn:hover{
   color: #fff;
   background: #999;
+}
+
+/* 詳細  (コメント部分) */
+.comment-box{
+  width: 50%;
+  margin: 5vh auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+}
+
+.comment-text{
+  width: 95%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+.comment-warn{
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px 0px;
+  text-align: center;
+}
+.comment-btn{
+  line-height: 48px;
+  background-color: #22a251;
+  border: 1px solid #22a251;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+.comments{
+  margin: 10px 0;
+  padding: 30px;
+  border-top: dotted 1px #dedede;
+}
+.comments p{
+  text-align: left;
+  border-bottom: 1px solid #22a251;
 }
 
 /* ユーザーページ */

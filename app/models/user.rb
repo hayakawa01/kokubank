@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :comments
 
+  # updateの際にパスワードが不要になるコード
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
@@ -18,7 +20,8 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
+  # /updateの際にパスワードが不要になるコード
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :prefecture
     belongs_to :career
