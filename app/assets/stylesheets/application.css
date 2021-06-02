@@ -218,7 +218,7 @@ footer{
 }
 
 .new-post-form{
-  height: 100vh - 100px ;
+  height: calc(100vh - 100px) ;
 }
 .new-post-main{
   width: 70vw;
