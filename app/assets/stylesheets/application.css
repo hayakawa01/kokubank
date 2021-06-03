@@ -391,6 +391,20 @@ footer{
   border-bottom: 1px solid #22a251;
 }
 
+/* 編集ページ*/
+#currentThumb{
+  width: 600px;
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+#currentThumb img {
+  width: 600px;
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
