@@ -15,16 +15,7 @@
     </div>
     <ul class='post-lists'>
       <% @posts.each do |post| %>
-        <li class='list'>
-          <%= link_to post_path(post.id)  do %>
-              <%= image_tag post.image,class:'post-img' %>
-            <div class='post-info'>
-              <h3 class='post-name'>
-                <%= post.class_name %><%= post.user.nickname %>
-              </h3>
-            </div>
-          <% end %>
-        </li>
+        <%= render 'post' ,post: post %>
       <% end %>
     </ul>
   </div>

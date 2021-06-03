@@ -13,6 +13,20 @@
           <%= link_to "削除する", post_path(@post.id),method: :delete, class: "post__btn" %>
         </div>
       <% end %>
+
+      <% if current_user.already_liked?(@post) %>
+        <%= link_to post_likes_path(@post) , method: :delete do %>
+          <i class="fas fa-heart"></i>
+          <%= @post.likes.count %>
+        <% end %>
+      <% else %>
+        <%= link_to post_likes_path(@post), method: :post do %>
+          <i class="far fa-heart"></i>
+          <%= @post.likes.count %>
+        <% end %>
+      <% end %>
+      
+      
       <div class="post__image">
         <%= image_tag @post.image, class:"post___image" %>
       </div>

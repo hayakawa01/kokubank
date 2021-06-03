@@ -1,0 +1,21 @@
+<li class='list',id ='post_<%= post.id %>'>
+  <%= link_to post_path(post.id)  do %>
+      <%= image_tag post.image,class:'post-img' %>
+    <div class='post-info'>
+      <h3 class='post-name'>
+        <%= post.class_name %><br/><%= post.user.nickname %>
+      </h3>
+      <% if current_user.already_liked?(post) %>
+        <%= link_to post_likes_path(post) , method: :delete  do %>
+          <i class="fas fa-heart"></i>
+          <%= post.likes.count %>
+        <% end %>
+      <% else %>
+        <%= link_to post_likes_path(post), method: :post do %>
+          <i class="far fa-heart"></i>
+          <%= post.likes.count %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</li>
