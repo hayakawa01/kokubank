@@ -15,9 +15,7 @@
     </div>
     <ul class='post-lists'>
       <% @posts.each do |post| %>
-        <tr id ='post_<%= post.id %>'>
-          <%= render 'post' ,post: post %>
-        </tr>
+        <%= render 'post' ,post: post %>
       <% end %>
     </ul>
   </div>

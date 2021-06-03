@@ -1,4 +1,4 @@
-<li class='list'>
+<li class='list',id ='post_<%= post.id %>'>
   <%= link_to post_path(post.id)  do %>
       <%= image_tag post.image,class:'post-img' %>
     <div class='post-info'>
@@ -6,10 +6,15 @@
         <%= post.class_name %><br/><%= post.user.nickname %>
       </h3>
       <% if current_user.already_liked?(post) %>
-        <%= link_to 'いいねを外す', post_likes_path(post) , method: :delete, remote: true %>
+        <%= link_to post_likes_path(post) , method: :delete  do %>
+          <i class="fas fa-heart"></i>
+          <%= post.likes.count %>
+        <% end %>
       <% else %>
-        <%= link_to 'いいね', post_likes_path(post), method: :post, remote: true %>
-        <%= post.likes.count %>
+        <%= link_to post_likes_path(post), method: :post do %>
+          <i class="far fa-heart"></i>
+          <%= post.likes.count %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
