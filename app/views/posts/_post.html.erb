@@ -1,0 +1,16 @@
+<li class='list'>
+  <%= link_to post_path(post.id)  do %>
+      <%= image_tag post.image,class:'post-img' %>
+    <div class='post-info'>
+      <h3 class='post-name'>
+        <%= post.class_name %><br/><%= post.user.nickname %>
+      </h3>
+      <% if current_user.already_liked?(post) %>
+        <%= link_to 'いいねを外す', post_likes_path(post) , method: :delete, remote: true %>
+      <% else %>
+        <%= link_to 'いいね', post_likes_path(post), method: :post, remote: true %>
+        <%= post.likes.count %>
+      <% end %>
+    </div>
+  <% end %>
+</li>

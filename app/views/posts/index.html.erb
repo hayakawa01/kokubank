@@ -15,23 +15,9 @@
     </div>
     <ul class='post-lists'>
       <% @posts.each do |post| %>
-        <li class='list'>
-          <%= link_to post_path(post.id)  do %>
-              <%= image_tag post.image,class:'post-img' %>
-            <div class='post-info'>
-              <h3 class='post-name'>
-                <%= post.class_name %><br/><%= post.user.nickname %>
-              </h3>
-              <% if current_user.already_liked?(post) %>
-                <%= link_to 'いいねを外す', post_likes_path(post) , method: :delete %>
-                <%= post.likes.count %>
-              <% else %>
-                <%= link_to 'いいね', post_likes_path(post), method: :post %>
-                <%= post.likes.count %>
-              <% end %>
-            </div>
-          <% end %>
-        </li>
+        <tr id ='post_<%= post.id %>'>
+          <%= render 'post' ,post: post %>
+        </tr>
       <% end %>
     </ul>
   </div>

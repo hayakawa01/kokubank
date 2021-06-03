@@ -1,0 +1,4 @@
+document.getElementById('post_<%= @post.id %>').innerHTML = '<%= j(render @post)%>'
+<%# app/views/likes/create.js.erb %>
+
+document.getElementById('post_<%= @post.id %>').innerHTML = '<%= j(render @post) %>'
