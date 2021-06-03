@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create(comment_params)
-    redirect_to "/posts/#{@comment.post.id}"
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname, url: @comment.user_id
+    end
+    #redirect_to "/posts/#{@comment.post.id}"
   end
 
   private
