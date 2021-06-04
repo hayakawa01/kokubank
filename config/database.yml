@@ -50,8 +50,8 @@ test:
 production:
   <<: *default
   database: kokubank_production
-  username: kokubank
-  password: <%= ENV['KOKUBANK_DATABASE_PASSWORD'] %>
+  #username: kokubank
+  #password: <%= ENV['KOKUBANK_DATABASE_PASSWORD'] %>
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
