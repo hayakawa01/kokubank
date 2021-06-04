@@ -27,9 +27,6 @@ development:
 test:
   <<: *default
   database: kokubank_test
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -55,3 +52,6 @@ production:
   database: kokubank_production
   username: kokubank
   password: <%= ENV['KOKUBANK_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
