@@ -1,7 +1,180 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#親のデータ
+grade1 = Grade.create(name: '小1')
+grade2 = Grade.create(name: '小2')
+grade3 = Grade.create(name: '小3')
+grade4 = Grade.create(name: '小4')
+grade5 = Grade.create(name: '小5')
+grade6 = Grade.create(name: '小6')
+grade7 = Grade.create(name: '特別支援')
+grade8 = Grade.create(name: '学年共通')
+
+#子のデータ、孫データ(国社算理音図家体生道英(外)総学そ)
+
+##小１の子データ
+grade1_1 = grade1.children.create(name: '国語')
+grade1_2 = grade1.children.create(name: '算数')
+grade1_3 = grade1.children.create(name: '音楽')
+grade1_4 = grade1.children.create(name: '図工')
+grade1_5 = grade1.children.create(name: '体育')
+grade1_6 = grade1.children.create(name: '生活')
+grade1_7 = grade1.children.create(name: '道徳')
+grade1_8 = grade1.children.create(name: '外国語')
+grade1_9 = grade1.children.create(name: '学活')
+grade1_10 = grade1.children.create(name: 'その他')
+
+###小１の孫データ{name: ''}
+grade_1_1.children.create([{name: '説明文'},{name: '物語'},{name: '詩'},{name: '読む'},{name: '書く'},{name: '話す・聞く'},{name: '言葉'},{name: '漢字'},{name: '作文'}])
+grade_1_2.children.create([{name: '100までの数'},{name: '順序数'},{name: '数量の表現'},{name: '1位数の加法'},{name: '1位数の減法'},{name: '2位数の加法・減法'},{name: '3口の加法・減法'},{name: 'くり上がりのあるたし算'},{name: 'くり下がりのあるひき算'},{name: '100をこえる数'},{name: '時計の読み方'},{name: '長さの比較'},{name: '面積の比較'},{name: '平面図形や立体図形の観察'},{name: '平面図形や立体図形の構成'},{name: '求大・求小'}])
+grade_1_3.children.create([{name: '歌唱'},{name: '合奏'},{name: 'リズム'},{name: '鑑賞'}],{name: 'その他'})
+grade_1_4.children.create([{name: '絵画'},{name: 'デザイン'},{name: '工作'},{name: '版画'},{name: 'ものづくり'},{name: '造形あそび'},{name: '鑑賞'},{name: 'その他'}])
+grade_1_5.children.create([{name: '体つくり運動'},{name: '陸上運動'},{name: '器械運動'},{name: 'ボール運動'},{name: '水泳'},{name: 'なわとび'},{name: '表現運動'},{name: 'その他'}])
+grade_1_6.children.create([{name: '学校生活の始まり'},{name: '学校生活'},{name: '植物の飼育'},{name: '季節の変化(夏)'},{name: '生物との関わり'},{name: '季節の変化(秋)'},{name: '身近な自然の利用'},{name: '家庭生活との関わり'},{name: '季節の変化(冬)'},{name: '1年生の振り返り'}])
+grade_1_7.children.create([{name: '正直・明朗・公正・責任'},{name: '家族愛'},{name: '生命の尊重'},{name: '思いやり・信頼'},{name: 'いじめ・差別'},{name: '不撓不屈・努力'},{name: '生き方'},{name: 'その他'}])
+grade_1_8.children.create([{name: '慣れ親しむ'}])
+grade_1_9.children.create([{name: '学級会'},{name: '行事関係'},,{name: 'アイスブレイク'}{name: 'その他'}])
+grade_1_10.children.create([{name: '黒板メッセージ・黒板アート'}])
+
+
+##小２の子データ
+grade2_1 = grade2.children.create(name: '国語')
+grade2_2 = grade2.children.create(name: '算数')
+grade2_3 = grade2.children.create(name: '音楽')
+grade2_4 = grade2.children.create(name: '図工')
+grade2_5 = grade2.children.create(name: '体育')
+grade2_6 = grade2.children.create(name: '生活')
+grade2_7 = grade2.children.create(name: '道徳')
+grade2_8 = grade2.children.create(name: '外国語')
+grade2_9 = grade2.children.create(name: '学活')
+grade2_10 = grade2.children.create(name: 'その他')
+
+###小２の孫データ{name: ''}
+grade2_1.children.create([{name: '説明文'},{name: '物語'},{name: '詩'},{name: '読む'},{name: '書く'},{name: '話す・聞く'},{name: '言葉'},{name: '漢字'},{name: '作文'}])
+grade2_2.children.create([{name: '2位数と1位数の加法'},{name: '2位数と1位数の減法'},{name: '3位数とその加法・減法'},{name: '（）の意味と加法・減法'},{name: '加法・減法の筆算'},{name: '乗法の意味・5、2、3、4、のだん'},{name: '6、7、8、9、1のだん'},{name: '10000までの数'},{name: '簡単な分数'},{name: '長さの単位'},{name: '体積の単位'},{name: '時間の単位'},{name: '三角形と四角形'},{name: '箱の形'},{name: '簡単な表やグラフ'},{name: '加法と減法の相互関係'}])
+grade2_3.children.create([{name: '歌唱'},{name: '合奏'},{name: 'リズム'},{name: '鑑賞'}],{name: 'その他'}])
+grade2_4.children.create([{name: '絵画'},{name: 'デザイン'},{name: '工作'},{name: '版画'},{name: 'ものづくり'},{name: '造形あそび'},{name: '鑑賞'},{name: 'その他'}])
+grade2_5.children.create([{name: '体つくり運動'},{name: '陸上運動'},{name: '器械運動'},{name: 'ボール運動'},{name: '水泳'},{name: 'なわとび'},{name: '表現運動'},{name: 'その他'}])
+grade2_6.children.create([{name:'季節の変化(春)'},{name:'植物の飼育'},{name:'地域との関わり(活動)'},{name:'生物の観察'},{name:'おもちゃの製作'},{name:'公共施設への理解'},{name:'地域との関わり(調査)'},{name:'地域との関わり(伝え合う)'},{name:'自分の生活や成長の振り返り'}])
+grade2_7.children.create([{name: '正直・明朗・公正・責任'},{name: '家族愛'},{name: '生命の尊重'},{name: '思いやり・信頼'},{name: 'いじめ・差別'},{name: '不撓不屈・努力'},{name: '生き方'},{name: '学級生活'},{name:'その他'}])
+grade2_8.children.create([{name: '慣れ親しむ'}])
+grade2_9.children.create([{name: '学級会'},{name: '行事関係'},,{name: 'アイスブレイク'}{name: 'その他'}])
+grade2_10.children.create([{name: '黒板メッセージ・黒板アート'}])
+
+
+##小３の子データ
+grade3_1 = grade3.children.create(name: '国語')
+grade3_2 = grade3.children.create(name: '社会')
+grade3_3 = grade3.children.create(name: '算数')
+grade3_4 = grade3.children.create(name: '理科')
+grade3_5 = grade3.children.create(name: '音楽')
+grade3_6 = grade3.children.create(name: '図工')
+grade3_7 = grade3.children.create(name: '体育')
+grade3_8 = grade3.children.create(name: '道徳')
+grade3_9 = grade3.children.create(name: '外国語')
+grade3_10 = grade3.children.create(name: '総合')
+grade3_11 = grade3.children.create(name: '学活')
+grade3_12 = grade3.children.create(name: 'その他')
+
+###小３の孫データ{name: ''}
+grade3_1.children.create([{name: '説明文'},{name: '物語'},{name: '詩'},{name: '読む'},{name: '書く'},{name: '話す・聞く'},{name: '言葉'},{name: '漢字'},{name: '作文'},{name: '書写'}])
+grade3_2.children.create([{name: '町の様子'},{name: '市の様子'},{name: '地域の人々の仕事'},{name: '地域の安全を守る仕事'},{name: '昔のくらし・道具'},{name: '地域の歴史や文化'}])
+grade3_3.children.create([{name: 'かけ算(交換法則)'},{name: 'わり算の意味'},{name: '3位数4位数の加法・減法'},{name: '2位数の加減の暗算'},{name: 'あまりのあるわり算'},{name: '1億までの数'},{name: '2位数×1位数とその筆算'},{name: '九九一回適用のわり算'},{name: '小数の意味、加法と減法'},{name: '分数の意味、同分母の加減'},{name: '2位数3位数のかけ算'},{name: '時刻と時間'},{name: '長さの単位'},{name: '重さの単位'},{name: '円と球'},{name: '二等辺三角形と正三角形'},{name: '□を使った式'},{name: '棒グラフ、表'}])
+grade3_4.children.create([{name: 'ものの重さ'},{name: '風の働き・ゴムの働き'},{name: '地面の暖かさや湿り気の違い'},{name: '磁石の性質'},{name: '電気の通り道'},{name: 'チョウの飼育'},{name: '昆虫の観察'},{name: '身近な生物の観察'},{name: '植物の成長(種)'},{name: '植物の成長(花)'},{name: '植物の成長(実)'},{name: '日陰の位置と太陽の働き'}])
+grade3_5.children.create([{name: '歌唱'},{name: '合奏'},{name: 'リズム'},{name: '鑑賞'}],{name: 'その他'}])
+grade3_6.children.create([{name: '絵画'},{name: 'デザイン'},{name: '工作'},{name: '版画'},{name: 'ものづくり'},{name: '造形あそび'},{name: '鑑賞'},{name: 'その他'}])
+grade3_7.children.create([{name: '体つくり運動'},{name: '陸上運動'},{name: '器械運動'},{name: 'ボール運動'},{name: '水泳'},{name: 'なわとび'},{name: '表現運動'},{name: 'その他'}])
+grade3_8.children.create([{name: '正直・明朗・公正・責任'},{name: '家族愛'},{name: '生命の尊重'},{name: '思いやり・信頼'},{name: 'いじめ・差別'},{name: '不撓不屈・努力'},{name: '生き方'},{name: '学級生活'},{name:'その他'}])
+grade3_9.children.create([{name: 'Unit1'},{name: 'Unit2'},{name: 'Unit3'},{name: 'Unit4'},{name: 'Unit5'},{name: 'Unit6'},{name: 'Unit7'},{name: 'Unit8'},{name: 'Unit9'}])
+grade3_10.children.create([{name: 'まちづくり教育'},{name: '情報教育'},{name: '福祉教育'},{name: '自然教育'},{name: 'その他'}])
+grade3_11.children.create([{name: '学級会'},{name: '行事関係'},,{name: 'アイスブレイク'}{name: 'その他'}])
+grade3_12.children.create([{name: '黒板メッセージ・黒板アート'}])
+
+
+##小４の子データ
+grade4_1 = grade4.children.create(name: '国語')
+grade4_2 = grade4.children.create(name: '社会')
+grade4_3 = grade4.children.create(name: '算数')
+grade4_4 = grade4.children.create(name: '理科')
+grade4_5 = grade4.children.create(name: '音楽')
+grade4_6 = grade4.children.create(name: '図工')
+grade4_7 = grade4.children.create(name: '体育')
+grade4_8 = grade4.children.create(name: '道徳')
+grade4_9 = grade4.children.create(name: '外国語')
+grade4_10 = grade4.children.create(name: '総合')
+grade4_11 = grade4.children.create(name: '学活')
+grade4_12 = grade4.children.create(name: 'その他')
+
+###小４の孫データ{name: ''}
+grade4_1.children.create([{name: '説明文'},{name: '物語'},{name: '詩'},{name: '読む'},{name: '書く'},{name: '話す・聞く'},{name: '言葉'},{name: '漢字'},{name: '作文'},{name: '書写'}])
+grade4_2.children.create([{name: '県の様子'},{name: '都道府県'},{name: '水・ゴミ'},{name: '地震'},{name: '県の歴史や文化'}])
+grade4_3.children.create([{name: '2位数÷1位数とその筆算'},{name: '1億をこえる数'},{name: '2〜3位数÷1〜3位数とその筆算'},{name: '概数、四捨五入'},{name: '小数の加減'},{name: '小数の乗除'},{name: '真分数、仮分数、帯分数'},{name: '角度の単位'},{name: '面積の意味とその単位'},{name: '垂直と平行'},{name: '直方体、立方体の概念'},{name: '折れ線グラフ、二次元表'},{name: '四則計算'},{name: '2つの数量の対応関係'}])
+grade4_4.children.create([{name: '空気や水の圧縮'},{name: 'ものの体積と温度の関係'},{name: '水の三態変化'},{name: '金属や水のあたたまり方'},{name: '電気の働き'},{name: '人の体のつくりと運動'},{name: '冬の生物の観察'},{name: '天気の様子'},{name: '生物の一年間の振り返り'},{name: '自然の中の水'},{name: '夏の星の観察'},{name: '月や星の動き'},{name: '冬の星の観察'}])
+grade4_5.children.create([{name: '歌唱'},{name: '合奏'},{name: 'リズム'},{name: '鑑賞'}],{name: 'その他'}])
+grade4_6.children.create([{name: '絵画'},{name: 'デザイン'},{name: '工作'},{name: '版画'},{name: 'ものづくり'},{name: '造形あそび'},{name: '鑑賞'},{name: 'その他'}])
+grade4_7.children.create([{name: '体つくり運動'},{name: '陸上運動'},{name: '器械運動'},{name: 'ボール運動'},{name: '水泳'},{name: 'なわとび'},{name: '表現運動'},{name: 'その他'}])
+grade4_8.children.create([{name: '正直・明朗・公正・責任'},{name: '家族愛'},{name: '生命の尊重'},{name: '思いやり・信頼'},{name: 'いじめ・差別'},{name: '不撓不屈・努力'},{name: '生き方'},{name: '学級生活'},{name:'その他'}])
+grade4_9.children.create([{name: 'Unit1'},{name: 'Unit2'},{name: 'Unit3'},{name: 'Unit4'},{name: 'Unit5'},{name: 'Unit6'},{name: 'Unit7'},{name: 'Unit8'},{name: 'Unit9'}])
+grade4_10.children.create([{name: 'まちづくり教育'},{name: '情報教育'},{name: '福祉教育'},{name: '自然教育'},{name: 'その他'}])
+grade4_11.children.create([{name: '学級会'},{name: '行事関係'},,{name: 'アイスブレイク'}{name: 'その他'}])
+grade4_12.children.create([{name: '黒板メッセージ・黒板アート'}])
+
+
+##小５の子データ
+grade5_1 = grade5.children.create(name: '国語')
+grade5_2 = grade5.children.create(name: '社会')
+grade5_3 = grade5.children.create(name: '算数')
+grade5_4 = grade5.children.create(name: '理科')
+grade5_5 = grade5.children.create(name: '音楽')
+grade5_6 = grade5.children.create(name: '図工')
+grade5_7 = grade5.children.create(name: '家庭')
+grade5_8 = grade5.children.create(name: '体育')
+grade5_9 = grade5.children.create(name: '道徳')
+grade5_10 = grade5.children.create(name: '英語')
+grade5_11 = grade5.children.create(name: '総合')
+grade5_12 = grade5.children.create(name: '学活')
+grade5_13 = grade5.children.create(name: 'その他')
+
+###小５の孫データ{name: ''}
+grade5_1.children.create([{name: '説明文'},{name: '物語'},{name: '詩'},{name: '読む'},{name: '書く'},{name: '話す・聞く'},{name: '言葉'},{name: '漢字'},{name: '作文'},{name: '書写'},{name: '古典'}])
+grade5_2.children.create([{name: '日本の大陸や海洋とその様子'},{name: '日本の農業や水産業'},{name: '日本の工業'},{name: '日本の情報産業'},{name: '日本の自然環境とその保全'}])
+grade5_3.children.create([{name: '小数や整数の位取り'},{name: '小数×小数'},{name: '小数÷小数'},{name: '偶数と奇数、倍数と約数、素数'},{name: '分数と小数、整数の関係'},{name: '異分母分数の加減'},{name: '分数と整数の乗除'},{name: '直方体、立方体の体積'},{name: '平均の意味とその求め方'},{name: '合同の意味'},{name: '三角形や四角形の内角の和'},{name: '三角形や平行四辺形の面積'},{name: '正多角形、円周率の意味'},{name: '角柱と円柱、見取り図、展開図'},{name: '比例の定義'},{name: '割合の意味'},{name: '円グラフ帯グラフ'}])
+grade5_4.children.create([{name: 'ものの溶け方'},{name: '振り子の運動'},{name: '電流の動き'},{name: '植物の発芽、成長'},{name: '植物の結実'},{name: 'メダカの誕生'},{name: 'ヒトの誕生'},{name: '天気の変化'},{name: '流水の働き'},{name: '台風'}])
+grade5_5.children.create([{name: '歌唱'},{name: '合奏'},{name: 'リズム'},{name: '鑑賞'}],{name: 'その他'}])
+grade5_6.children.create([{name: '絵画'},{name: 'デザイン'},{name: '工作'},{name: '版画'},{name: 'ものづくり'},{name: '造形あそび'},{name: '鑑賞'},{name: 'その他'}])
+grade5_7.children.create([{name: '家庭生活と家族'},{name: '日常の食事と調理の基礎'},{name: '快適な衣類と住まい'},{name: '身近な消費生活と環境'}])
+grade5_8.children.create([{name: '体つくり運動'},{name: '陸上運動'},{name: '器械運動'},{name: 'ボール運動'},{name: '水泳'},{name: 'なわとび'},{name: '表現運動'},{name: 'その他'}])
+grade5_9.children.create([{name: '正直・明朗・公正・責任'},{name: '家族愛'},{name: '生命の尊重'},{name: '思いやり・信頼'},{name: 'いじめ・差別'},{name: '不撓不屈・努力'},{name: '生き方'},{name: '学級生活'},{name:'ジレンマ'},{name:'その他'}])
+grade5_10.children.create([{name: 'Unit1'},{name: 'Unit2'},{name: 'Unit3'},{name: 'Unit4'},{name: 'Unit5'},{name: 'Unit6'},{name: 'Unit7'},{name: 'Unit8'},{name: 'Unit9'}])
+grade5_11.children.create([{name: 'まちづくり教育'},{name: '情報教育'},{name: '福祉教育'},{name: '自然教育'},{name: 'キャリア教育'},{name: 'その他'}])
+grade5_12.children.create([{name: '学級会'},{name: '行事関係'},,{name: 'アイスブレイク'}{name: 'その他'}]])
+grade5_13.children.create([{name: '黒板メッセージ・黒板アート'}])
+
+
+##小６の子データ
+grade6_1 = grade6.children.create(name: '国語')
+grade6_2 = grade6.children.create(name: '社会')
+grade6_3 = grade6.children.create(name: '算数')
+grade6_4 = grade6.children.create(name: '理科')
+grade6_5 = grade6.children.create(name: '音楽')
+grade6_6 = grade6.children.create(name: '図工')
+grade6_7 = grade6.children.create(name: '家庭')
+grade6_8 = grade6.children.create(name: '体育')
+grade6_9 = grade6.children.create(name: '道徳')
+grade6_10 = grade6.children.create(name: '英語')
+grade6_11 = grade6.children.create(name: '総合')
+grade6_12 = grade6.children.create(name: '学活')
+grade6_13 = grade6.children.create(name: 'その他')
+
+###小６の孫データ{name: ''}
+grade6_1.children.create([{name: '説明文'},{name: '物語'},{name: '詩'},{name: '読む'},{name: '書く'},{name: '話す・聞く'},{name: '言葉'},{name: '漢字'},{name: '作文'},{name: '書写'},{name: '古典'}])
+grade6_2.children.create([{name: 'わたしたちの生活と政治'},{name: '世界の中の日本'},{name: '歴史(縄文〜奈良)'},{name: '歴史(平安〜明治)'},{name: '歴史(大正〜平成)'}])
+grade6_3.children.create([{name: '分数の乗法'},{name: '分数の除法'},{name: '円の面積の求め方と公式'},{name: '角柱、円柱の体積'},{name: 'およその面積'},{name: '速さ'},{name: '拡大図・縮図'},{name: '文字式'},{name: '比や比の意味'},{name: '比例と反比例'},{name: '並べ方と組み合わせ'},{name: '資料(データ)の調べ方'}])
+grade6_4.children.create([{name: '燃焼の仕組み'},{name: '水溶液の性質'},{name: 'てこの規則性'},{name: '電気の利用'},{name: '人の体のつくりと働き'},{name: '植物のつくりと成長'},{name: '生物と食べ物、空気、水'},{name: '生物と環境'},{name: '土地のつくり'},{name: '土地の変化'},{name: '月と太陽'}])
+grade6_5.children.create([{name: '歌唱'},{name: '合奏'},{name: 'リズム'},{name: '鑑賞'}],{name: 'その他'}])
+grade6_6.children.create([{name: '絵画'},{name: 'デザイン'},{name: '工作'},{name: '版画'},{name: 'ものづくり'},{name: '造形あそび'},{name: '鑑賞'},{name: 'その他'}])
+grade6_7.children.create([{name: '家庭生活と家族'},{name: '日常の食事と調理の基礎'},{name: '快適な衣類と住まい'},{name: '身近な消費生活と環境'}])
+grade6_8.children.create([{name: '体つくり運動'},{name: '陸上運動'},{name: '器械運動'},{name: 'ボール運動'},{name: '水泳'},{name: 'なわとび'},{name: '表現運動'},{name: 'その他'}])
+grade6_9.children.create([{name: '正直・明朗・公正・責任'},{name: '家族愛'},{name: '生命の尊重'},{name: '思いやり・信頼'},{name: 'いじめ・差別'},{name: '不撓不屈・努力'},{name: '生き方'},{name: '学級生活'},{name:'ジレンマ'},{name:'その他'}])
+grade6_10.children.create([{name: 'Unit1'},{name: 'Unit2'},{name: 'Unit3'},{name: 'Unit4'},{name: 'Unit6'},{name: 'Unit6'},{name: 'Unit7'},{name: 'Unit8'},{name: 'Unit9'}])
+grade6_11.children.create([{name: 'まちづくり教育'},{name: '情報教育'},{name: '福祉教育'},{name: '自然教育'},{name: 'キャリア教育'},{name: 'その他'}])
+grade6_12.children.create([{name: '学級会'},{name: '行事関係'},,{name: 'アイスブレイク'}{name: 'その他'}]])
+grade6_13.children.create([{name: '黒板メッセージ・黒板アート'}])
