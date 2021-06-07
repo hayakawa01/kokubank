@@ -1,0 +1,12 @@
+<%= search_form_for @p, url: posts_search_path do |f| %>
+  <div class="search-wrapper">
+    <div class="search-content">
+        <%= f.label :class_name, 'キーワード検索', class: 'search-label' %>
+        <%= f.search_field :class_name_cont, placeholder: 'キーワードを入力', class:"search-form-control float-right" %>
+    </div>
+    <div class="search-content col-12 text-center">
+      <%= f.submit '検索する', class:"search-btn" %>
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+<% end %>

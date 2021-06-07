@@ -50,7 +50,7 @@ li{
 
 /* ヘッダー */
 header{
-  height: 80px;
+  height: 90px;
   width: 100%;
   background-color: rgba(34, 49, 52, 0.9);
   color: #f5f5f5;
@@ -66,11 +66,13 @@ header a:visited{
   height: 40px;
   width: 170px ;
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 .header-left{
   float: left;
 }
+
+
 
 .header-right {
   float: right;
@@ -78,7 +80,7 @@ header a:visited{
 }
 
 .header-right a {
-  line-height: 85px;
+  line-height: 90px;
   padding: 0 25px;
   color: white;
   display: block;
@@ -126,6 +128,19 @@ footer{
 
 .top-wrapper p {
   opacity: 0.9;
+}
+.search-box{
+  margin-top: 30px;
+}
+
+.search-wrapper{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.search-btn{
+  font-family: FontAwesome;
 }
 
 /* 投稿一覧*/
@@ -187,6 +202,9 @@ footer{
   height: 24px;
   font-size: 16px;
   text-align: right;
+}
+.pagination{
+  text-align: center;
 }
 
 

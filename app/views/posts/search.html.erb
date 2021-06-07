@@ -1,0 +1,22 @@
+<div class="container">
+  <h5 class="results-title"><i class="fas fa-poll-h fa-2x my-orange"></i>検索結果一覧</h5>
+    <div class="results">
+      <% if @results.length !=0 %>
+        <% @results.each do |result| %>
+          <div class="card-group col-md-6 col-lg-3">
+            <%= link_to post_path(result.id), class: "article-link" do%>
+            <div class="card articles-chart">
+              <%= image_tag result.image, class:"card-img-top" %> 
+                <div class="card-body">
+                  <h5 class="card-title"><%= result.class_name %></h5>
+                  <!--<p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= result.likes.count %></span></p>-->
+                </div>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <h5 class="alert">該当する投稿はありません！</h5>
+      <% end %>
+    </div>
+</div>
