@@ -1,17 +1,19 @@
 <%= render 'shared/header' %>
 
 <div class='main'>
-  <%# メインメッセージ %>
-  <div class="main-message">
-    <h1>KOKUBANKへようこそ!</h1>
-    <h2>先生方の黒板をのぞきに行きませんか?</h2>
-    <p>＃KOKUBANKは板書写真の共有アプリです＃</p>
+  <div class='top-wrapper'>
+    <%# メインメッセージ %>
+    <div class="main-message">
+      <h1>WELCOME TO KOKUBANK.</h1>
+      <p>KOKUBANKは板書写真の共有アプリです</p>
+      <p>先生方の黒板をのぞきに行きましょう。</p>
+    </div>
   </div>
   <%# 投稿一覧 %>
   <div class="post-contents">
     <h2 class='title'>ラインナップ</h2>
     <div class="subtitle">
-      新規投稿黒板
+      新規投稿
     </div>
     <ul class='post-lists'>
       <% @posts.each do |post| %>

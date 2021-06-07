@@ -1,19 +1,16 @@
 <header class='top-page-header'>
-  <div class='container'>
+  <div class='header-left'>
     <%= link_to image_tag('logo.png',class:"kokubank-icon"), '/'%>
   </div>
-  <div class='nav'>
-    <ul class='lists-right'>
-      <li><%= link_to 'KOKUBANKとは？','/' , class:'list-right'%></li>
-      <li><%= link_to '投稿する',new_post_path, class:'list-right' %></li>
-      <%if user_signed_in? %>
-        <li><%= link_to "#{current_user.nickname}のページ", user_path(current_user.id), class:'list-right' %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'list-right' %></li>
-      <% else %>  
-        <li><%= link_to 'ログイン', new_user_session_path, class:'list-right' %></li>
-        <li><%= link_to '新規登録', new_user_registration_path,class:'list-right' %></li>
-      <% end %>
-    </ul>
-    <ul>
+  <div class='header-right'>
+    <%= link_to 'KOKUBANKとは？','/' %>
+  <%if user_signed_in? %>
+    <%= link_to "#{current_user.nickname}のページ", user_path(current_user.id)%>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= link_to '投稿する',new_post_path %>
+  <% else %>  
+    <%= link_to 'ログイン', new_user_session_path %>
+    <%= link_to '新規登録', new_user_registration_path %>
+  <% end %>
   </div>
 </header>
