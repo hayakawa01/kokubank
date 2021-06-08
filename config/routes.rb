@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  resources :grades,only:[:index,:show]
   resources :users
 end

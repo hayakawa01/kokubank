@@ -1,0 +1,22 @@
+<h1>カテゴリ一覧</h1>
+<ul class='grades'>
+  <% @parents.each do |parent| %>
+    <li>
+      <%=link_to "#{parent.name}", grade_path(parent)%>
+    </li>
+    <ul class='grades_children'>
+      <% parent.children.each do |child| %>
+        <li>
+          <%=link_to "#{child.name}", grade_path(child)%>
+        </li>
+        <ul class="grade_grandchildren">
+          <% child.children.each do |grandchild| %>
+            <li>
+              <%=link_to "#{grandchild.name}", grade_path(grandchild) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
