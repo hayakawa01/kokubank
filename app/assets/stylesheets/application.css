@@ -335,6 +335,15 @@ footer{
   width: 100%;
   height: 25px;
 }
+
+.grandchild_grade_id{
+  width: 100%;
+  height: 25px;
+}
+.child_grade_id{
+  width: 100%;
+  height: 25px;
+}
 .post-btn{
   width: 50%;
   margin: 0 auto;
