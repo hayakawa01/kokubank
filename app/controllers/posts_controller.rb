@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
+  before_action :set_parents,only:[:new,:create]
   before_action :set_post,only:[:show,:edit,:update,:destroy]
   before_action :correct_edit,only:[:edit,:update,:destroy]
   before_action :search_post,only:[:index,:search]
-  before_action :set_parents,only:[:new,:create]
   
 
   def index
@@ -50,7 +50,11 @@ class PostsController < ApplicationController
       #ajax通信開始
       format.json do
         # 子の乗法を@childrensに代入してる
-        @childrens = Grade.find(params[:params]).children
+        if params[:parent_id]
+          @childrens = Grade.find(params[:parent_id]).children
+        elsif params[:children_id]
+          @grandchildrens = Grade.find(params[:children_id]).children
+        end
       end
     end
   end
