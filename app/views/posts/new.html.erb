@@ -30,16 +30,16 @@
           </div>
           <div class='post-form'>
             <div class='bold-text'>学年</div>
-            <%= f.collection_select(:grade_id, Grade.all, :id, :name, {},{class:'select-box'}) %>
+            <%= f.collection_select(:grade_id, @parents, :id, :name, {prompt: "選択してください"},{class:'select-box',id:'grade_form'}) %>
           </div>
-          <div class='post-form'>
+          <!--<div class='post-form'>
             <div class='bold-text'>教科</div>
             <%= f.collection_select(:subject_id, Subject.all, :id, :name, {},{class:'select-box'}) %>
           </div>
           <div class='post-form'>
             <div class='bold-text'>単元</div>
             <%= f.collection_select(:unit_id, Unit.all, :id, :name, {},{class:'select-box'}) %>
-          </div>
+          </div>-->
         </div>
       <%# /授業名と授業の内容%>
       <%# 投稿ボタン%>
