@@ -62,29 +62,36 @@ header{
 header a:visited{
   color: #ffffff;
 }
+.top-page-header{
+  display: flex;
+}
 .kokubank-icon{
   height: 40px;
   width: 170px ;
   margin-left: 40px;
   margin-top: 25px;
 }
-.header-left{
-  float: left;
+
+
+.search-form-control{
+  width: 300px;
+}
+.search-btn{
+  height: 28px;
+  width: 28px;
 }
 
-
-
 .header-right {
-  float: right;
-  margin-right: -10px;
+  
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header-right a {
   line-height: 90px;
   padding: 0 25px;
   color: white;
-  display: block;
-  float: left;
   transition: all 0.5s;
 }
 

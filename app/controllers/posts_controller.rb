@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_parents,only:[:new,:create]
   before_action :set_post,only:[:show,:edit,:update,:destroy]
   before_action :correct_edit,only:[:edit,:update,:destroy]
-  before_action :search_post,only:[:index,:search]
+  before_action :search_post
   
 
   def index
@@ -76,10 +76,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def search_post
-    @p = Post.ransack(params[:q])
-    @search_p = @p.result
-  end
 
   def set_parents
     @parents = Grade.where(ancestry: nil)

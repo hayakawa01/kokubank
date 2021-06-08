@@ -3,6 +3,9 @@
     <%= link_to image_tag('logo.png',class:"kokubank-icon"), '/'%>
   </div>
   <div class='header-right'>
+    <div class='search-box'>
+      <%= render 'posts/search' %>
+    </div>
     <%= link_to 'KOKUBANKとは？','/' %>
   <% if user_signed_in? %>
     <%= link_to "#{current_user.nickname}のページ", user_path(current_user.id)%>
