@@ -1,4 +1,5 @@
 <h1>カテゴリ一覧</h1>
+<div class="grade_lists">
 <ul class='grades'>
   <% @parents.each do |parent| %>
     <li>
@@ -9,7 +10,7 @@
         <li>
           <%=link_to "#{child.name}", grade_path(child)%>
         </li>
-        <ul class="grade_grandchildren">
+        <ul class="grades_grandchildren">
           <% child.children.each do |grandchild| %>
             <li>
               <%=link_to "#{grandchild.name}", grade_path(grandchild) %>
@@ -20,3 +21,4 @@
     </ul>
   <% end %>
 </ul>
+</div>

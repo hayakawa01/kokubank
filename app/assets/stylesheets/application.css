@@ -533,3 +533,21 @@ footer{
   width: 300px;
   height: 200px;
 }
+
+/* カテゴリ一覧（テスト）*/
+.grades{
+  font-size: 50px;
+  background-color: cadetblue;
+}
+.grades_children{
+  font-size: 30px;
+  background-color: rgb(168, 199, 200);
+}
+.grades_grandchildren{
+  font-size: 16px;
+  background-color: rgb(205, 226, 227);
+}
+
+.grade_lists{
+  display: flex;
+}

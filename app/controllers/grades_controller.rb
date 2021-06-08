@@ -6,7 +6,7 @@ class GradesController < ApplicationController
 
   def show
     @posts = @grade.set_posts
-    @posts = @posts.where(user_id: nil).order("id DESC").page(params[:page]).per(9)
+    @posts = @posts.order("id DESC").page(params[:page]).per(9)
   end
 
   private

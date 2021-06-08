@@ -12,13 +12,11 @@
   <div class='post-index'>
     <div class='title'>
       <%= "#{@grade.name}の一覧"%>
-      <%if @posts.present?%>
         <ul class='post-lists'>
           <% @posts.each do |post| %>
-            <%= render 'post' ,post: post %>
+            <%= render 'posts/post' ,post: post %>
           <% end %>
         </ul>
-      <% end %>
     </div>
   </div>
 </div>
