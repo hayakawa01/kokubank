@@ -3,13 +3,13 @@
     <div class="results">
       <% if @results.length !=0 %>
         <% @results.each do |result| %>
-          <div class="card-group col-md-6 col-lg-3">
-            <%= link_to post_path(result.id), class: "article-link" do%>
-            <div class="card articles-chart">
-              <%= image_tag result.image, class:"card-img-top" %> 
+          <div class="result-group">
+            <%= link_to post_path(result.id), class: "result-link" do%>
+            <div class="card-posts">
+              <%= image_tag result.image, class:"card-img" %> 
                 <div class="card-body">
                   <h5 class="card-title"><%= result.class_name %></h5>
-                  <!--<p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= result.likes.count %></span></p>-->
+                  <h5 class="card-username"><%= result.user.nickname %></h5>
                 </div>
             </div>
             <% end %>
@@ -19,4 +19,16 @@
         <h5 class="alert">該当する投稿はありません！</h5>
       <% end %>
     </div>
+</div>
+<div class="search-bar">
+  <%= search_form_for @q, url: items_search_path do |f| %>
+    <div class="nav-title">詳細検索</div>
+    <ul>
+      <li class="search-nav-content">
+        <p><%= f.label "カテゴリーを選択する" %></p>
+        <%= f.collection_select :grade_id, @parents, :id, :name, {prompt:'選択してください'}, {class:"search-select-box",id='search_form'}  %>
+      </li>
+    <%= f.submit '検索する' %>
+    </ul>
+  <% end %>
 </div>

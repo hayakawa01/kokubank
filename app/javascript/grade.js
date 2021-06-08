@@ -78,6 +78,4 @@ $(document).on("change",".child_grade_id",function () {
     });
   };
 });
-
-
 });
