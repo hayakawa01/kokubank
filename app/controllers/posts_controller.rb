@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post,only:[:show,:edit,:update,:destroy]
   before_action :correct_edit,only:[:edit,:update,:destroy]
   before_action :search_post,only:[:index,:search]
+  before_action :set_parents,only:[:new,:create]
   
 
   def index
@@ -44,6 +45,14 @@ class PostsController < ApplicationController
 
   def search
     @results = @p.result.page(params[:page]).per(9).order('id DESC')
+    respond_to do |format|
+      format.html
+      #ajax通信開始
+      format.json do
+        # 子の乗法を@childrensに代入してる
+        @childrens = Grade.find(params[:params]).children
+      end
+    end
   end
 
   
@@ -66,6 +75,10 @@ class PostsController < ApplicationController
   def search_post
     @p = Post.ransack(params[:q])
     @search_p = @p.result
+  end
+
+  def set_parents
+    @parents = Grade.where(ancestry: nil)
   end
   
 end
