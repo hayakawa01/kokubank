@@ -75,3 +75,4 @@ gem 'aws-sdk-s3', require: false
 gem 'ransack'
 gem 'kaminari'
 gem 'ancestry'
+gem 'jquery-rails'
