@@ -48,6 +48,15 @@ li{
   list-style: none;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:visited{
+  color: black;
+}
+
 /* ヘッダー */
 header{
   height: 90px;
@@ -367,7 +376,8 @@ footer{
 
 /* 投稿詳細ページ*/
 .post__heading{
-  font-size: 24px;
+  padding-top: 40px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
@@ -377,6 +387,10 @@ footer{
   color: #999;
   text-align: center;
   text-decoration: underline;
+}
+.like--btn{
+  padding: 20px;
+  text-align: center;
 }
 .post__image{
   width: 800px;
@@ -514,19 +528,21 @@ footer{
   width: 70%;
   padding: 16px 8px;
 }
-.board{
-  height: 250px;
-  width: 300px;
-}
-.board__body{
-  text-align: center;
-}
 
 .user__board {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.board{
+  height: 250px;
+  width: 300px;
+}
+
+.board__body{
+text-align: center;
 }
 
 .post__img{
@@ -550,4 +566,19 @@ footer{
 
 .grade_lists{
   display: flex;
+}
+
+/* いいね機能 */
+.like-link{
+  text-decoration: none;
+}
+
+.like-btn{
+  font-size: 1em;
+  color: #808080;
+}
+
+.unlike-btn{
+  font-size: 1em;
+  color: #e54747;
 }

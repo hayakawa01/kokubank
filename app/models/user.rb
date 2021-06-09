@@ -47,8 +47,8 @@ class User < ApplicationRecord
   validates :password,format:{with: /\A(?=.*[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は、半角英数字混合での入力が必須です"},on: :create
   validates :introduction, length: {maximum: 1000}
 
-  def already_liked?(post)
-    self.likes.exists?(post_id: post.id)
+  def already_liked?(post_id)
+    likes.where(post_id: post_id).exists?
   end
 
 end

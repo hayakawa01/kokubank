@@ -7,7 +7,8 @@
       </h2>
       <% if current_user.id == @user.id && user_signed_in? %>
         <div class='edit-info'>
-          <%= link_to 'プロフィールの編集',edit_user_path(@user.id) %>  
+          <%= link_to 'プロフィールの編集',edit_user_path(@user.id) %> 
+          <%= link_to 'いいねした投稿', likes_user_path(@user.id)%> 
         </div>
       <% end %>
       <table class="table">
@@ -42,8 +43,10 @@
         <div class="board">
           <%= link_to image_tag(post.image.variant(resize: '400x500'), class: :post__img), post_path(post.id) %>
           <div class="board__body">
-            <%= link_to "#{post.class_name}", post_path(post.id), class: :board__title%>
-
+            <%= link_to "#{post.class_name}", post_path(post.id), class: :board__title%> 
+          </div>
+          <div id = 'like_<%= post.id %>'>
+            <%= render partial: 'likes/like', locals: {post: post} %>
           </div>
         </div>
         <% end %>

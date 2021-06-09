@@ -1,23 +1,14 @@
 <li class='list',id ='post_<%= post.id %>'>
-  <%= link_to post_path(post.id)  do %>
-    <div class='post-info'>
-      <div class='post-title'>
-        <%= post.class_name%>
-      </div>
-      <%= image_tag post.image,class:'post-img' %>
-      <div class='post-name'>
-        <%= post.user.nickname%>
-      </div>
-      <% if current_user.already_liked?(post) %>
-        <%= link_to post_likes_path(post) , method: :delete  do %>
-          <i class="fas fa-heart"></i>
-          <%= post.likes.count %>
-        <% end %>
-      <% else %>
-        <%= link_to post_likes_path(post), method: :post do %>
-          <i class="far fa-heart"></i>
-        <% end %>
-      <% end %>
+  <div class='post-info'>
+    <div class='post-title'>
+      <%=link_to post.class_name, post_path(post.id)  %>
     </div>
-  <% end %>
+    <%=link_to image_tag(post.image), post_path(post.id),class:'post-img' %>
+    <div class='post-name'>
+      <%=link_to post.user.nickname, user_path(post.user.id)%>
+    </div>
+    <div id = 'like_<%= post.id %>'>
+      <%= render partial: 'likes/like', locals: {post: post} %>
+    </div>
+  </div>
 </li>
