@@ -35,7 +35,7 @@
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "#{@user.nickname}さんのBANK"%>
+        <%= "#{@user.nickname}さんの実践一覧"%>
       </h2>
       <div class="user__board">
         <% @posts.each do |post| %>
@@ -43,11 +43,7 @@
           <%= link_to image_tag(post.image.variant(resize: '400x500'), class: :post__img), post_path(post.id) %>
           <div class="board__body">
             <%= link_to "#{post.class_name}", post_path(post.id), class: :board__title%>
-            <p class="board__summary">
-              <%= "#{post.grade.name}" %>
-              <%= "#{post.subject.name}" %>
-              <%= "#{post.unit.name}" %>
-            </p>
+
           </div>
         </div>
         <% end %>
