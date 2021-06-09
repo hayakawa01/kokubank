@@ -493,6 +493,9 @@ footer{
   text-align: left;
   border-bottom: 1px solid #22a251;
 }
+.comment-delete{
+  text-align: right;
+}
 
 /* 編集ページ*/
 #currentThumb{

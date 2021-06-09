@@ -1,11 +1,25 @@
 class CommentsController < ApplicationController
 
   def create
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.includes(:user).order('id DESC')
     @comment = Comment.new(comment_params)
     if @comment.save
-      ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname, url: @comment.user_id
+      redirect_back(fallback_location: root_path)
+    else
+      render "posts/show"
     end
-    #redirect_to "/posts/#{@comment.post.id}"
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    if current_user.id == @comment.user.id
+      @comment.destroy
+    redirect_back(fallback_location: root_path)
+    else
+      render "posts/show"
+    end
   end
 
   private
