@@ -80,9 +80,16 @@
       </div>
         <%= f.text_area :introduction ,class:'input-field'%>
     </div>
-      <div class="actions">
-        <%= f.submit "登録する" ,class:'registration-btn'%>
+    <div class='form-group'>
+      <div class="field">
+        <%= f.label 'プロフィール画像(任意)' %>
       </div>
+        <%= f.file_field :avatar ,class:'input-field'%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する" ,class:'registration-btn'%>
+    </div>
   </div>
 <% end %>
 

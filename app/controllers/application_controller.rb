@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameter
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:first_name, :family_name, :first_name_kana, :family_name_kana, :favorite_subject_id, :prefecture_id, :career_id, :introduction])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :family_name, :first_name_kana, :family_name_kana, :favorite_subject_id, :prefecture_id, :career_id, :introduction, :avatar])
   end
 
   def search_post
