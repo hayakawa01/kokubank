@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     end
   end
   resources :grades,only:[:index,:show]
-  resources :users
+  resources :users do
+    member do
+      get :likes
+    end
+  end
 end

@@ -14,7 +14,7 @@
         </div>
       <% end %>
 
-      <div id = 'like_<%= @post.id %>'>
+      <div id = 'like_<%= @post.id %>' class='like--btn'>
         <%= render partial: 'likes/like', locals: {post: @post} %>
       </div>
       
