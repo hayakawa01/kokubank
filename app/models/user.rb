@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+#アップローダーのマウント
+  mount_uploader :avatar, AvatarUploader
+
 #更新の際パスワードが必要なくなる記述
   def update_without_current_password(params, *options)
     params.delete(:current_password)
@@ -22,12 +25,13 @@ class User < ApplicationRecord
     result
   end
 
+#ActiveHash
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :prefecture
     belongs_to :career
     belongs_to :favorite_subject
 
-
+#バリデーション
   with_options presence: true do
     validates :nickname
     with_options format:{with:  /\A[ぁ-んァ-ヶー-龥々ー]+\z/, message: 'は、全角での入力が必要です'} do
@@ -47,6 +51,7 @@ class User < ApplicationRecord
   validates :password,format:{with: /\A(?=.*[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は、半角英数字混合での入力が必須です"},on: :create
   validates :introduction, length: {maximum: 1000}
 
+  #いいね機能
   def already_liked?(post_id)
     likes.where(post_id: post_id).exists?
   end
