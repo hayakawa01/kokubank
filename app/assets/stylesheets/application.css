@@ -528,19 +528,21 @@ footer{
   width: 70%;
   padding: 16px 8px;
 }
-.board{
-  height: 250px;
-  width: 300px;
-}
-.board__body{
-  text-align: center;
-}
 
 .user__board {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.board{
+  height: 250px;
+  width: 300px;
+}
+
+.board__body{
+text-align: center;
 }
 
 .post__img{
