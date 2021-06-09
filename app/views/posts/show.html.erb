@@ -14,18 +14,9 @@
         </div>
       <% end %>
 
-      <% if current_user.already_liked?(@post) %>
-        <%= link_to post_likes_path(@post) , method: :delete do %>
-          <i class="fas fa-heart"></i>
-          <%= @post.likes.count %>
-        <% end %>
-      <% else %>
-        <%= link_to post_likes_path(@post), method: :post do %>
-          <i class="far fa-heart"></i>
-          <%= @post.likes.count %>
-        <% end %>
-      <% end %>
-      
+      <div id = 'like_<%= @post.id %>'>
+        <%= render partial: 'likes/like', locals: {post: @post} %>
+      </div>
       
       <div class="post__image">
         <%= image_tag @post.image, class:"post___image" %>
