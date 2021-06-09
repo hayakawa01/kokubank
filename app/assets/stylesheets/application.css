@@ -50,7 +50,7 @@ li{
 
 /* ヘッダー */
 header{
-  height: 80px;
+  height: 90px;
   width: 100%;
   background-color: rgba(34, 49, 52, 0.9);
   color: #f5f5f5;
@@ -62,27 +62,36 @@ header{
 header a:visited{
   color: #ffffff;
 }
+.top-page-header{
+  display: flex;
+}
 .kokubank-icon{
   height: 40px;
   width: 170px ;
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
-.header-left{
-  float: left;
+
+
+.search-form-control{
+  width: 300px;
+}
+.search-btn{
+  height: 28px;
+  width: 28px;
 }
 
 .header-right {
-  float: right;
-  margin-right: -10px;
+  
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header-right a {
-  line-height: 85px;
+  line-height: 90px;
   padding: 0 25px;
   color: white;
-  display: block;
-  float: left;
   transition: all 0.5s;
 }
 
@@ -126,6 +135,19 @@ footer{
 
 .top-wrapper p {
   opacity: 0.9;
+}
+.search-box{
+  margin-top: 30px;
+}
+
+.search-wrapper{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.search-btn{
+  font-family: FontAwesome;
 }
 
 /* 投稿一覧*/
@@ -187,6 +209,9 @@ footer{
   height: 24px;
   font-size: 16px;
   text-align: right;
+}
+.pagination{
+  text-align: center;
 }
 
 
@@ -314,6 +339,15 @@ footer{
   height: 250px;
 }
 .select-box{
+  width: 100%;
+  height: 25px;
+}
+
+.grandchild_grade_id{
+  width: 100%;
+  height: 25px;
+}
+.child_grade_id{
   width: 100%;
   height: 25px;
 }
@@ -498,4 +532,22 @@ footer{
 .post__img{
   width: 300px;
   height: 200px;
+}
+
+/* カテゴリ一覧（テスト）*/
+.grades{
+  font-size: 50px;
+  background-color: cadetblue;
+}
+.grades_children{
+  font-size: 30px;
+  background-color: rgb(168, 199, 200);
+}
+.grades_grandchildren{
+  font-size: 16px;
+  background-color: rgb(205, 226, 227);
+}
+
+.grade_lists{
+  display: flex;
 }

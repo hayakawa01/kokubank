@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+  before_action :set_parents,only:[:new,:create]
   before_action :set_post,only:[:show,:edit,:update,:destroy]
   before_action :correct_edit,only:[:edit,:update,:destroy]
+  before_action :search_post
   
 
   def index
-    @posts = Post.includes(:user).order('id DESC')
+    @posts = Post.includes(:user).order('id DESC').page(params[:page]).per(9)
   end
 
   def new
@@ -41,6 +43,22 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @results = @p.result.page(params[:page]).per(9).order('id DESC')
+    respond_to do |format|
+      format.html
+      #ajax通信開始
+      format.json do
+        # 子の乗法を@childrensに代入してる
+        if params[:parent_id]
+          @childrens = Grade.find(params[:parent_id]).children
+        elsif params[:children_id]
+          @grandchildrens = Grade.find(params[:children_id]).children
+        end
+      end
+    end
+  end
+
   
   private
 
@@ -56,6 +74,11 @@ class PostsController < ApplicationController
     unless user_signed_in? && current_user.id == @post.user_id
       redirect_to root_path
     end
+  end
+
+
+  def set_parents
+    @parents = Grade.where(ancestry: nil)
   end
   
 end

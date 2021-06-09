@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_084650) do
+ActiveRecord::Schema.define(version: 2021_06_07_060307) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 2021_06_02_084650) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "grades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -55,12 +62,13 @@ ActiveRecord::Schema.define(version: 2021_06_02_084650) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "class_name", null: false
     t.text "detail", null: false
-    t.integer "grade_id", null: false
-    t.integer "subject_id", null: false
-    t.integer "unit_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "grade_id_id", null: false
+    t.bigint "grade_id", null: false
+    t.index ["grade_id"], name: "index_posts_on_grade_id"
+    t.index ["grade_id_id"], name: "index_posts_on_grade_id_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

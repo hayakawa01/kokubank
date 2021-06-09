@@ -17,8 +17,8 @@
 | introduction           | text    |                          |
 
 ### Association
-has_many: posts
-has_many: comments
+has_many :posts
+has_many :comments
 
 
 ## posts テーブル
@@ -27,15 +27,13 @@ has_many: comments
 | ---------------------- | ---------- | ------------------------ |
 | class_name             | string     | null: false              |
 | detail                 | text       | null: false              |
-| grade_id               | integer    | null: false              |
-| subject_id             | integer    | null: false              |
-| unit_id                | integer    | null: false              |
+| grade                  | references | foreign_key: true        |
 | user                   | references | foreign_key: true        |
 
 ### Association
-belongs_to: user
-has_many: comments
-
+belongs_to :user
+has_many :comments
+belongs_to :grade
 
 ## comments テーブル
 
@@ -46,5 +44,47 @@ has_many: comments
 | post                   | references | foreign_key: true        |
 
 ### Association
-belongs_to: user
-belongs_to: post
+belongs_to :user
+belongs_to :post
+
+
+## likes テーブル
+
+| Column                 | Type       | Options                  |
+| ---------------------- | ---------- | ------------------------ |
+| text                   | string     | null: false              |
+| user                   | references | foreign_key: true        |
+| post                   | references | foreign_key: true        |
+
+### Association
+belongs_to :user
+belongs_to :post
+
+
+## grades テーブル
+
+| Column                 | Type       | Options                  |
+| ---------------------- | ---------- | ------------------------ |
+| name                   | string     | null: false              |
+| ancestry               | string     |                          |
+
+### Association
+has_many :posts
+has_ancestry
+
+
+## subjects テーブル
+
+| Column                 | Type       | Options                  |
+| ---------------------- | ---------- | ------------------------ |
+| name                   | string     | null: false              |
+| grade                  | references | foreign_key: true        |
+
+
+## units テーブル
+
+| Column                 | Type       | Options                  |
+| ---------------------- | ---------- | ------------------------ |
+| name                   | string     | null: false              |
+| subject                | references | foreign_key: true        |
+

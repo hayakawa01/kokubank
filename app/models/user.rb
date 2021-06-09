@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
+# Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  # updateの際にパスワードが不要になるコード
+#更新の際パスワードが必要なくなる記述
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
@@ -21,8 +21,7 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-  # /updateの際にパスワードが不要になるコード
-  
+
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :prefecture
     belongs_to :career
@@ -48,9 +47,8 @@ class User < ApplicationRecord
   validates :password,format:{with: /\A(?=.*[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は、半角英数字混合での入力が必須です"},on: :create
   validates :introduction, length: {maximum: 1000}
 
-
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end
- 
+
 end
