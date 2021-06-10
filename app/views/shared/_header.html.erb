@@ -1,22 +1,77 @@
-<header class='top-page-header'>
-  <div class='header-left'>
-    <%= link_to image_tag('logo.png',class:"kokubank-icon"), '/'%>
-  </div>
-  <div class='header-right'>
-    <div class='search-box'>
-      <%= render 'posts/search' %>
+<header class='menu'>
+  <div class='menu-inner'>
+    <div class='menu-header'>
+      <div class='header-logo'>
+        <%= link_to image_tag('KOKUBANK_logo.png',class:"kokubank-icon"), '/'%>
+      </div>
+      <%= link_to root_path do %>
+        <div class='policy'>
+          FOR<br>ALL<br>TEACHERS<br>SITE
+        </div>
+      <% end %>
     </div>
-  <% if user_signed_in? %>
-    <% if current_user.avatar.present? %>
-      <%= link_to image_tag(current_user.avatar), user_path(current_user.id),class:'user-icon' %>
-    <% else %>
-      <%= link_to image_tag('noavatar2.png'), user_path(current_user.id),class:'user-icon' %>
-    <% end %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <%= link_to '投稿する',new_post_path %>
-  <% else %>  
-    <%= link_to 'ログイン', new_user_session_path %>
-    <%= link_to '新規登録', new_user_registration_path %>
-  <% end %>
+    <ul class='menu-list01'>
+      <% if user_signed_in? %>
+        <li class='menu-list01 icon'>
+          <% if current_user.avatar.present? %>
+            <%= link_to  user_path(current_user.id) do %>
+              <%= image_tag(current_user.avatar)%>
+              マイページ
+            <% end %>
+          <% else %>
+            <%= link_to image_tag('noavatar2.png'), user_path(current_user.id),class:'user-icon' %>
+          <% end %>
+        </li>
+        <li class='menu-list01 menu-newpost'>
+          <%= link_to new_post_path do %>
+            <i class="far fa-file-alt fa-lg"></i>
+            投稿する
+          <% end %>
+        </li>
+        </div>
+        <li class='menu-list01 menu-logout'>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-lg"></i>
+            ログアウト
+          <% end %>
+        </li>
+      <% else %>  
+        <li class='menu-list01 menu-login'>  
+          <%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt fa-lg"></i>
+            ログイン
+          <% end %>
+        </li>
+        <li class='menu-list01 menu-registration'>  
+          <%= link_to new_user_registration_path do %>
+            <i class="far fa-handshake fa-lg"></i>
+            登録する
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <ul class='menu-list02'>
+      <li class='menu-list02-item search'>
+        <%=link_to root_path do %>
+          <i class="fas fa-search fa-lg"></i>
+          黒板を探す
+        <% end %>
+      </li>
+      <li class='menu-list02-item search-box'>
+        <%= render 'posts/search' %>
+      </li>
+      <li class='menu-list02-item faq'>
+        <%=link_to root_path do %>
+          <i class="far fa-question-circle fa-lg"></i>
+          このサイトについて
+        <% end %>
+      </li>
+      <li class='menu-list02-item contact'>
+        <%=link_to root_path do %>
+          <i class="far fa-envelope fa-lg"></i>
+          お問い合わせ
+        <% end %>
+      </li>
+    </ul>
   </div>
 </header>

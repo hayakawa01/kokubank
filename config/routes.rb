@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  get 'top/index'
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }
-  root to: 'posts#index'
+  root to: 'top#index'
   get 'posts/search'
   resources :posts do
     resources :comments, only:[:create, :destroy]
