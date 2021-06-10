@@ -7,7 +7,7 @@
       </h2>
       <div class="user_icon">
         <% if @user.avatar.present? %>
-        <%= image_tag @user.avatar.url, class:'user_show-icon' %>
+        <%= image_tag @user.avatar, class:'user_show-icon' %>
         <% else %>
         <%= image_tag'user_show.png', class:'user_show-icon' %>
         <% end %>

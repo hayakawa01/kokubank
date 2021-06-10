@@ -39,8 +39,10 @@
 
 body {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  background-color: #fff;
   font-family: "ヒラギノ明朝 ProN W6";
 }
 
@@ -120,43 +122,6 @@ header a:visited{
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-
-/* フッター */
-footer{
-  height: 80px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-  text-align: center;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* メイン(index)*/
-.main{
-  flex: 1;
-  background-color: #f0f0f0;
-}
-.top-wrapper{
-  font-size: large;
-  text-align: center;
-  background-image: url(blackboard2.jpg);
-  background-size: cover;
-  color: #FFF;
-  text-shadow: 1px 0 5px black;
-  padding: 180px 0 100px 0;
-}
-
-.top-wrapper h1 {
-  opacity: 0.9;
-  font-size: 45px;
-  letter-spacing: 5px;
-}
-
-.top-wrapper p {
-  opacity: 0.9;
-}
 .search-box{
   margin-top: 30px;
 }
@@ -171,14 +136,68 @@ footer{
   font-family: FontAwesome;
 }
 
+
+/* フッター */
+footer{
+  height: 80px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  text-align: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* メイン(index)*/
+.top-wrapper{
+  font-size: large;
+  height: 500px;
+  text-align: center;
+  background-image: url(blackboard2.jpg);
+  background-size: cover;
+  color: #FFF;
+  text-shadow: 3px 0 10px black;
+  padding: 180px 0 100px 0;
+  margin-bottom: 30px;
+}
+.top-wrapper h1 {
+  opacity: 0.9;
+  font-size: 45px;
+  letter-spacing: 5px;
+}
+
+.top-wrapper p {
+  opacity: 0.9;
+}
+.main-contents{
+  margin: 0 50px;
+  display: flex;
+  flex: 1;
+}
+.main{
+  flex: 1;
+  background-color: #fff;
+}
+.nav{
+  width: 200px;
+  margin-bottom: 24px;
+  padding: 30px 20px;
+  background-color: #dfeeea;
+}
+.search-btn{
+  position: fixed;
+}
+
+
 /* 投稿一覧*/
 .post-contents{
-  margin: 0 250px;
+  margin: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
-  background-color: #f0f0f0;
+  background-color: #ecdbba;
 }
 
 .post-contents>.title{
@@ -191,7 +210,7 @@ footer{
   font-size: 3vh;
   margin: 1vh 0;
   text-transform: none;
-  color:rgba(34, 49, 52);
+  color: #c84b31;
   font-weight: bold;
 }
 
