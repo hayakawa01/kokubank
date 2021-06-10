@@ -213,9 +213,10 @@ footer{
   text-align: center;
 }
 
-.post-img{
-  width: 100%;
+.post-img img{
+  width: 250px;
   height: 150px;
+
 }
 
 .post-info{
@@ -488,8 +489,9 @@ footer{
   margin: 10px 0;
   padding: 30px;
   border-top: dotted 1px #dedede;
+  text-align: left;
 }
-.comments p{
+.comment{
   text-align: left;
   border-bottom: 1px solid #22a251;
 }
@@ -587,15 +589,15 @@ text-align: center;
 .grades_children{
   font-size: 30px;
   background-color: rgb(168, 199, 200);
+  display: none;
 }
 .grades_grandchildren{
   font-size: 16px;
   background-color: rgb(205, 226, 227);
+  display: none;
 }
 
-.grade_lists{
-  display: flex;
-}
+
 
 /* いいね機能 */
 .like-link{

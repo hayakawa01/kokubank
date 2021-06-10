@@ -47,13 +47,13 @@
     <h3>＜コメント一覧＞</h3>
     <div class="comments", id='comments'>
       <% @comments.each do |comment| %>
-        <p>
+        <div class='comment'>
           <strong id='comment_username'><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
           <%= comment.text %>
           <% if current_user.id == comment.user_id %>
-            <%=link_to '削除する', post_comment_path(@post,comment), method: :delete, class:'comment-delete' %>  
+            <%=link_to '削除', post_comment_path(@post,comment), method: :delete, class:'comment-delete' %>  
           <% end %>
-        </p>
+        </div>
       <% end %>
     </div>
   </div>
