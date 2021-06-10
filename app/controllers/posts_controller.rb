@@ -57,6 +57,8 @@ class PostsController < ApplicationController
         end
       end
     end
+    selection = params[:keyword]
+    @posts = Post.sort(selection)
   end
 
   

@@ -1,5 +1,9 @@
 <div class="container">
   <h5 class="results-title"><i class="fas fa-poll-h fa-2x my-orange"></i>検索結果一覧</h5>
+    <%=form_with model: @post, url: posts_search_path, method: :get, local: true do |f|%>
+      <%= f.select :keyword,[['新着順', 'new'],['人気順', 'likes']] %>
+      <%= f.submit %>
+    <% end %>
     <div class="results">
       <% if @results.length !=0 %>
         <% @results.each do |result| %>
