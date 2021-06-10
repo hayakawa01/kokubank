@@ -10,9 +10,15 @@ class Post < ApplicationRecord
     validates :class_name,length:{ maximum: 40}
     validates :detail,length:{ maximum: 1000}
     validates :image
-    #with_options numericality: {other_than: 1} do
-      #validates :grade_id
-    #end
+  end
+
+  def self.sort(selection)
+    case selection
+      when 'new'
+        return all.order(created_at: :DESC)
+      when 'likes'
+        return find(Like.group(:post_id).order(Arel.sql('count(post_id) desc')).pluck(:post_id))
+    end
   end
 
 end

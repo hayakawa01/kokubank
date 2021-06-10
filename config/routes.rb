@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   get 'posts/search'
   resources :posts do
-    resources :comments, only:[:create]
+    resources :comments, only:[:create, :destroy]
     resource :likes, only:[:create, :destroy]
     collection do
       get :search

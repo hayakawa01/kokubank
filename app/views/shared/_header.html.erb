@@ -6,13 +6,11 @@
     <div class='search-box'>
       <%= render 'posts/search' %>
     </div>
-    <%=link_to "カテゴリで探す",grades_path %>
-    
   <% if user_signed_in? %>
     <% if current_user.avatar.present? %>
-      <%= link_to image_tag(current_user.avatar.url), user_path(current_user.id),class:'user-icon' %>
+      <%= link_to image_tag(current_user.avatar), user_path(current_user.id),class:'user-icon' %>
     <% else %>
-      <%= link_to image_tag('noavatar.png'), user_path(current_user.id),class:'user-icon' %>
+      <%= link_to image_tag('noavatar2.png'), user_path(current_user.id),class:'user-icon' %>
     <% end %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     <%= link_to '投稿する',new_post_path %>

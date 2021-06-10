@@ -78,4 +78,29 @@ $(document).on("change",".child_grade_id",function () {
     });
   };
 });
+
+
+$(function(){
+  $('#parent_category1').on('click',function(){
+    $("#parent_list1").slideToggle();
+  });
+  $('#parent_category2').on('click',function(){
+    $("#parent_list2").slideToggle();
+  });
+  $('#parent_category3').on('click',function(){
+    $("#parent_list3").slideToggle();
+  });
+  $('#parent_category4').on('click',function(){
+    $("#parent_list4").slideToggle();
+  });
+  $('#parent_category5').on('click',function(){
+    $("#parent_list5").slideToggle();
+  });
+  $('#parent_category6').on('click',function(){
+    $("#parent_list6").slideToggle();
+  });
+  $('#parent_category7').on('click',function(){
+    $("#parent_list7").slideToggle();
+  });
+});
 });

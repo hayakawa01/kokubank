@@ -1,5 +1,9 @@
 <div class="container">
   <h5 class="results-title"><i class="fas fa-poll-h fa-2x my-orange"></i>検索結果一覧</h5>
+    <%=form_with model: @post, url: posts_search_path, method: :get, local: true do |f|%>
+      <%= f.select :keyword,[['新着順', 'new'],['人気順', 'likes']] %>
+      <%= f.submit %>
+    <% end %>
     <div class="results">
       <% if @results.length !=0 %>
         <% @results.each do |result| %>
@@ -19,16 +23,4 @@
         <h5 class="alert">該当する投稿はありません！</h5>
       <% end %>
     </div>
-</div>
-<div class="search-bar">
-  <%= search_form_for @q, url: items_search_path do |f| %>
-    <div class="nav-title">詳細検索</div>
-    <ul>
-      <li class="search-nav-content">
-        <p><%= f.label "カテゴリーを選択する" %></p>
-        <%= f.collection_select :grade_id, @parents, :id, :name, {prompt:'選択してください'}, {class:"search-select-box",id='search_form'}  %>
-      </li>
-    <%= f.submit '検索する' %>
-    </ul>
-  <% end %>
 </div>

@@ -34,7 +34,7 @@
   <%# コメント欄 %>
   <div class="comment-box">
     <% if user_signed_in? %>  
-      <%= form_with(model: [@post,@comment], local: true) do |f|%>
+      <%= form_with(model: [@post,@comment], local: true, method: :post) do |f|%>
         <%=f.text_area :text,row:'2',class:"comment-text"%>
           <p class="comment-warn">
             相手のことを考え丁寧なコメントを心がけましょう。
@@ -47,10 +47,13 @@
     <h3>＜コメント一覧＞</h3>
     <div class="comments", id='comments'>
       <% @comments.each do |comment| %>
-        <p>
+        <div class='comment'>
           <strong id='comment_username'><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
           <%= comment.text %>
-        </p>
+          <% if current_user.id == comment.user_id %>
+            <%=link_to '削除', post_comment_path(@post,comment), method: :delete, class:'comment-delete' %>  
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

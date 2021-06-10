@@ -7,9 +7,9 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-
+  has_one_attached :avatar
 #アップローダーのマウント
-  mount_uploader :avatar, AvatarUploader
+
 
 #更新の際パスワードが必要なくなる記述
   def update_without_current_password(params, *options)
