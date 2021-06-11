@@ -1,7 +1,7 @@
 <div class='main-visual'>
   <div class='main-visual-head'>
     <p class='main-visual-text'>
-      <span>KOKUBANK</span>で磨く
+      <span>KOKUBANK</span>でつながる
     </p>
     <div>
     板書例の共有に特化した<br>小学校教員専用のSNS
@@ -9,3 +9,62 @@
   </div>
 </div>
 <div>
+<div class='main02'>
+  <div class='main-text-box about'>
+    <section>
+      <h2 class='title-about'>KOKUBANKとは</h2>
+      <p class='text-about'>「明日の授業準備、不安だなぁ」と思ったことはありませんか？このサイトは、すばらしい先生方の板書を共有することで、先生方ひとりひとりの教師としての引き出しを増やし、授業力を向上することを目的としています。また、授業準備の手助けになればと考えております。</p>
+      <p class='text-about'>自分の板書も投稿できますので、紹介したい実践はぜひどんどんアップして共有していただければと思います！みなさんで、このサイトを作り上げていきましょう！</p>
+      <p class='btn-about'>
+        <%=link_to '/' do %>
+          さらにくわしく
+        <% end %>
+      </p>
+    </section>
+  </div>
+  <div class='main-text-box news'>
+    <section>
+      <h2 class='title-about'>新着情報</h2>
+      <div class='news-box'>
+        <ul>
+          <li><span>2021.06.11</span>トップページの実装</li>
+          <li><span>2021.06.10</span>コメント機能の同期化</li>
+          <li><span>2021.06.09</span>ヘッダーをサイドバーに</li>
+          <li><span>2021.06.08</span>カテゴリ検索の実装</li>
+        </ul>
+      </div>
+      <p class='btn-about'>
+        <%=link_to '/' do %>
+          新着情報一覧を見る
+        <% end %>
+      </p>
+    </section>
+  </div>
+</div>
+<div class='main01'>
+  <section class='post-slide'>
+    <h2 class='title-slide'>投稿例をスライドでご紹介</h2>
+    <div class='main-slide'>
+      <ul>
+        <li><%= image_tag('bansyo1.jpg')%><p>黒板１</p></li>
+        <li><%= image_tag('bansyo2.jpg')%><p>黒板２</p></li>
+        <li><%= image_tag('bansyo3.jpg')%><p>黒板３</p></li>
+      </ul>
+    </div>
+  </section>
+</div>
+<div class='main01 white'>
+  <section class='main-signup'>
+    <h2 class='title-signup'>初めてのご利用の場合</h2>
+      <p class='text-signup'>
+      投稿及び投稿詳細情報の閲覧には、会員登録が必要です。
+      <br/>
+      下のボタンより会員登録のお申し込みをお願いいたします。
+      </p>
+      <p class='btn-signup'>
+        <%=link_to new_user_registration_path do %>
+          会員登録
+        <% end %>
+      </p>
+  </section>
+</div>

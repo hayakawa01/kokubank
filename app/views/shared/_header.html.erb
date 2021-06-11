@@ -35,6 +35,15 @@
             ログアウト
           <% end %>
         </li>
+        <li class='menu-list02-item search'>
+        <%=link_to root_path do %>
+          <i class="fas fa-search fa-lg"></i>
+          黒板を探す
+        <% end %>
+      </li>
+      <li class='menu-list02-item search-box'>
+        <%= render 'posts/search' %>
+      </li>
       <% else %>  
         <li class='menu-list01 menu-login'>  
           <%= link_to new_user_session_path do %>
@@ -45,21 +54,13 @@
         <li class='menu-list01 menu-registration'>  
           <%= link_to new_user_registration_path do %>
             <i class="far fa-handshake fa-lg"></i>
-            登録する
+            会員登録
           <% end %>
         </li>
       <% end %>
     </ul>
     <ul class='menu-list02'>
-      <li class='menu-list02-item search'>
-        <%=link_to root_path do %>
-          <i class="fas fa-search fa-lg"></i>
-          黒板を探す
-        <% end %>
-      </li>
-      <li class='menu-list02-item search-box'>
-        <%= render 'posts/search' %>
-      </li>
+      
       <li class='menu-list02-item faq'>
         <%=link_to root_path do %>
           <i class="far fa-question-circle fa-lg"></i>
