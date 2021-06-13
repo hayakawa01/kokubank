@@ -1,15 +1,27 @@
 <header class='menu'>
   <div class='menu-inner'>
     <div class='menu-header'>
-      <div class='header-logo'>
-        <%= link_to image_tag('KOKUBANK_logo.png',class:"kokubank-icon"), '/'%>
-      </div>
-      <%= link_to root_path do %>
-        <div class='policy'>
-          FOR<br>ALL<br>TEACHERS<br>SITE
+      <% if user_signed_in? %>
+        <div class='header-logo'>
+          <%= link_to image_tag('KOKUBANK_logo.png',class:"kokubank-icon"), posts_path %>
         </div>
+        <%= link_to posts_path do %>
+          <div class='policy'>
+            FOR<br>ALL<br>TEACHERS<br>SITE
+          </div>
+        <% end %>
+      <% else %>
+        <div class='header-logo'>
+          <%= link_to image_tag('KOKUBANK_logo.png',class:"kokubank-icon"), root_path %>
+        </div>
+        <%= link_to root_path do %>
+          <div class='policy'>
+            FOR<br>ALL<br>TEACHERS<br>SITE
+          </div>
+        <% end %>
       <% end %>
     </div>
+
     <ul class='menu-list01'>
       <% if user_signed_in? %>
         <li class='menu-list01 icon'>
@@ -19,7 +31,10 @@
               マイページ
             <% end %>
           <% else %>
-            <%= link_to image_tag('noavatar2.png'), user_path(current_user.id),class:'user-icon' %>
+            <%= link_to  user_path(current_user.id) do %>
+              <%= image_tag('noavatar2.png',class:'user-icon')%>
+              マイページ
+            <% end %>
           <% end %>
         </li>
         <li class='menu-list01 menu-newpost'>
@@ -35,15 +50,36 @@
             ログアウト
           <% end %>
         </li>
-        <li class='menu-list02-item search'>
-        <%=link_to root_path do %>
-          <i class="fas fa-search fa-lg"></i>
-          黒板を探す
-        <% end %>
-      </li>
-      <li class='menu-list02-item search-box'>
-        <%= render 'posts/search' %>
-      </li>
+        <ul class='menu-list02'>
+          <li class='menu-list02-item search'>
+            <%=link_to root_path do %>
+              <i class="fas fa-search fa-lg"></i>
+               キーワードで探す
+            <% end %>
+          </li>
+          <li class='menu-list02-item search-box'>
+            <%= render 'posts/search' %>
+          </li>
+          <li  class='menu-list02-item'>
+            <%=link_to  grades_path do %>
+              <i class="fas fa-book fa-lg "></i>
+              カテゴリで探す
+            <% end %>
+          </li>
+          <li class='menu-list02-item faq'>
+            <%=link_to about_path do %>
+              <i class="far fa-question-circle fa-lg"></i>
+              このサイトについて
+            <% end %>
+          </li>
+          <li class='menu-list02-item contact'>
+            <%=link_to root_path do %>
+              <i class="far fa-envelope fa-lg"></i>
+              お問い合わせ
+            <% end %>
+          </li>
+        </ul>
+
       <% else %>  
         <li class='menu-list01 menu-login'>  
           <%= link_to new_user_session_path do %>
@@ -57,22 +93,23 @@
             会員登録
           <% end %>
         </li>
+        <ul class='menu-list02'>
+          <li class='menu-list02-item faq'>
+            <%=link_to about_path do %>
+              <i class="far fa-question-circle fa-lg"></i>
+              このサイトについて
+            <% end %>
+          </li>
+          <li class='menu-list02-item contact'>
+            <%=link_to root_path do %>
+              <i class="far fa-envelope fa-lg"></i>
+              お問い合わせ
+            <% end %>
+          </li>
+        </ul>
       <% end %>
     </ul>
-    <ul class='menu-list02'>
-      
-      <li class='menu-list02-item faq'>
-        <%=link_to root_path do %>
-          <i class="far fa-question-circle fa-lg"></i>
-          このサイトについて
-        <% end %>
-      </li>
-      <li class='menu-list02-item contact'>
-        <%=link_to root_path do %>
-          <i class="far fa-envelope fa-lg"></i>
-          お問い合わせ
-        <% end %>
-      </li>
-    </ul>
+    
+    
   </div>
 </header>

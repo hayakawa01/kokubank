@@ -1,9 +1,9 @@
 <li class='list',id ='post_<%= post.id %>'>
   <div class='post-info'>
+    <%=link_to image_tag(post.image), post_path(post.id),class:'post-img' %>
     <div class='post-title'>
       <%=link_to post.class_name, post_path(post.id)  %>
     </div>
-    <%=link_to image_tag(post.image), post_path(post.id),class:'post-img' %>
     <div class='post-name'>
       <%=link_to post.user.nickname, user_path(post.user.id)%>
     </div>

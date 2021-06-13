@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :search_post
 
+def after_sign_in_path_for(resource)
+  posts_path(resource)
+end
+
+
 
   private
   def basic_auth
