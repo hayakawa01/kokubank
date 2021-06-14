@@ -288,7 +288,7 @@ footer{
   text-align: center;
   font-weight: bold;
   color: #333;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .main-slide img{
@@ -983,6 +983,10 @@ footer{
 
 .target-text h2{
   border-bottom: 1px solid #2f5d62;
+}
+
+.text-about{
+  
 }
 /*////////////////////////////////////////////エラーメッセージ*/
 .error-alert{
