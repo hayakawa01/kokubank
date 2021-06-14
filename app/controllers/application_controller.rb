@@ -21,7 +21,7 @@ end
   end
 
   def search_post
-    @p = Post.ransack(params[:q])
-    @search_p = @p.result(distinct: true)
+    @search = Post.ransack(params[:q])
+    @search_posts = @search.result(distinct: true).order(created_at: "DESC").includes(:user).page(params[:page]).per(9)
   end
 end

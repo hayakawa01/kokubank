@@ -1,10 +1,13 @@
-<%= render 'shared/header' %>
-<div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}のプロフィール"%>
-      </h2>
+<div class='sub-mainvisual'>
+  <h1>マイページ</h1>
+</div>
+
+<div class="user__wrapper">
+  <h2 class="page-heading">
+    <%= "#{@user.nickname}  のプロフィール"%>
+  </h2>
+  <div class='user-info'>
+    <div class='user-info01'>
       <div class="user_icon">
         <% if @user.avatar.present? %>
         <%= image_tag @user.avatar, class:'user_show-icon' %>
@@ -14,10 +17,12 @@
       </div>
       <div class='edit-info'>
         <% if current_user.id == @user.id && user_signed_in? %>
-          <%= link_to 'プロフィールの編集',edit_user_path(@user.id) %> 
-          <%= link_to 'いいねした投稿', likes_user_path(@user.id)%> 
+          <%= link_to 'プロフィールの編集',edit_user_path(@user.id),class:'user-edit' %> 
+          <%= link_to 'いいねした投稿', likes_user_path(@user.id),class:'user-likes'%> 
         <% end %>
       </div>
+    </div>
+    <div class='user-info02'>
       <table class="table">
         <tbody>
           <tr>
@@ -38,27 +43,24 @@
           </tr>
           <tr>
             <th class="table__col1">自己紹介文</th>
-            <td class="table__col2"><%= "#{@user.introduction}" %></td>
+            <td class="table__col2"><%= safe_join(@user.introduction.split("\n"),tag(:br))%></td>
           </tr>
         </tbody>
       </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの実践一覧"%>
-      </h2>
-      <div class="user__board">
-        <% @posts.each do |post| %>
-        <div class="board">
-          <%= link_to image_tag(post.image.variant(resize: '400x500'), class: :post__img), post_path(post.id) %>
-          <div class="board__body">
-            <%= link_to "#{post.class_name}", post_path(post.id), class: :board__title%> 
-          </div>
-          <div id = 'like_<%= post.id %>'>
-            <%= render partial: 'likes/like', locals: {post: post} %>
-          </div>
-        </div>
-        <% end %>
+    </div>
+  </div>
+  <h2 class="page-heading">
+    <%= "#{@user.nickname}さんの板書一覧"%>
+  </h2>
+  <div class="main_contents">
+    <div class='main'>
+      <div class="post-contents">
+        <ul class='post-lists'>
+          <% @posts.each do |post| %>
+            <%= render 'posts/post' ,post: post %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-<%= render 'shared/footer' %>

@@ -1,30 +1,36 @@
+<div class='sub-mainvisual'>
+  <h1>カテゴリーで探す</h1>
+</div>
 <div class="grade_lists">
   <h1>カテゴリ一覧</h1>
-  <ul class='grades_parent'>
+  <h3>学年をクリックすると教科が現れます</h3>
+  <div class='category'>
     <% @parents.each do |parent| %>
-      <div class='cateagory-box' id='parent_category<%= parent.id %>'>
-        <p class='parent-category' id='parent<%= parent.id%>'>
-          <%= "#{parent.name}"%>
-        </p>
-      </div>
-      <ul class='grades_children' id='parent_list<%=parent.id%>'>
-        <% parent.children.each do |child| %>
-          <div class='cateagory-box' id='child_category<%= child.id %>'>
-            <p class='child-category' id='child<%= child.id%>'>
-              <%=link_to "#{child.name}", grade_path(child)%>
-            </p>
-          </div>
-          <ul class="grades_grandchildren" id='child_list<%=child.id%>'>
-            <% child.children.each do |grandchild| %>
-              <div class='cateagory-box' id='grandchild_category<%= grandchild.id %>'>
-                <p class='grandchild-category' id='grandchild<%= grandchild.id%>'>
-                  <%=link_to "#{grandchild.name}", grade_path(grandchild) %>
-                </p>
-              </div>
-            <% end %>
-          </ul>
-        <% end %>
-      </ul>
+      <ul class='grades_parent'>  
+        <div class='cateagory-box' id='parent_category<%= parent.id %>'>
+          <p class='parent-category' id='parent<%= parent.id%>'>
+            <%= "#{parent.name}"%>
+          </p>
+        </div>
+        <ul class='grades_children' id='parent_list<%=parent.id%>'>
+          <% parent.children.each do |child| %>
+            <div class='cateagory-box' id='child_category<%= child.id %>'>
+              <p class='child-category' id='child<%= child.id%>'>
+                <%=link_to "#{child.name}", grade_path(child)%>
+              </p>
+            </div>
+            <ul class="grades_grandchildren" id='child_list<%=child.id%>'>
+              <% child.children.each do |grandchild| %>
+                <div class='cateagory-box' id='grandchild_category<%= grandchild.id %>'>
+                  <p class='grandchild-category' id='grandchild<%= grandchild.id%>'>
+                    <%=link_to "#{grandchild.name}", grade_path(grandchild) %>
+                  </p>
+                </div>
+              <% end %>
+            </ul>
+          <% end %>
+        </ul>
+      </ul> 
     <% end %>
-  </ul> 
+  </div>
 </div>

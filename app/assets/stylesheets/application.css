@@ -84,7 +84,7 @@ header{
 .kokubank-icon{
   height: 40px;
   width: 170px ;
-  margin: 25px 10px 0;
+  margin: 20px 10px 0;
 }
 
 .menu .policy{
@@ -350,43 +350,16 @@ footer{
 
 
 /* ///////////////////////////////////////////////メイン(index)*/
-.top-wrapper{
-  font-size: large;
-  height: 500px;
-  text-align: center;
-  background-image: url(blackboard2.jpg);
-  background-size: cover;
-  color: #FFF;
-  text-shadow: 3px 0 10px black;
-  padding: 180px 0 100px 0;
-  margin-bottom: 30px;
-}
-.top-wrapper h1 {
-  opacity: 0.9;
-  font-size: 45px;
-  letter-spacing: 5px;
-}
 
-.top-wrapper p {
-  opacity: 0.9;
-}
 .main-contents{
-  margin: 0 50px;
+  margin: 20px 50px;
   display: flex;
   flex: 1;
+  
 }
 .main{
   flex: 1;
-  background-color: #fff;
-}
-.nav{
-  width: 200px;
-  margin-bottom: 24px;
-  padding: 30px 20px;
-  background-color: #dfeeea;
-}
-.search-btn{
-  position: fixed;
+  background-color: #f3f3f3;
 }
 
 /* //////////////////////////////////////////////////////投稿一覧*/
@@ -396,21 +369,7 @@ footer{
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
-  background-color: #ecdbba;
-}
-
-.post-contents>.title{
-  font-size: 3vh;
-  line-height: 1.4px;
-  font-weight: bold;
-}
-
-.post-contents>.subtitle{
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-transform: none;
-  color: #c84b31;
-  font-weight: bold;
+  
 }
 
 .post-lists{
@@ -422,35 +381,62 @@ footer{
 }
 
 .post-lists>.list{
-  width: calc(100% / 3 - 30px);
+  width: calc(100% / 4 - 30px);
 	margin: calc(30px / 2);
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   height: 200px;
-}
-.post-title{
-  text-align: center;
-}
-
-.post-img img{
-  width: 250px;
-  height: 150px;
-
 }
 
 .post-info{
-  background-color: #fafafa;
+  background-color: #fff;
   border-radius: 10px;
+  
 }
 .post-info a:visited{
   color: black;
 }
 
+.post-image{
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  border-radius: 10px; 
+}
+
+.post-image img{
+  height: 150px;
+}
+
+.post-info .post-image{
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0,0,0,.4);
+}
+
+.post-title{
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.3;
+  padding-top: 10px;
+}
+
+.post-time{
+  font-size: 12px;
+  text-align: right;
+}
+
+.post-subtext{
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .post-name{
-  height: 24px;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 14px;
   text-align: right;
 }
 .pagination{
+  color: #2f5d62;
   text-align: center;
 }
 
@@ -461,8 +447,10 @@ footer{
   width: 100%;
   min-width: 800px;
   height: 100%;
+  padding: 20px;
   display: flex;
   justify-content: center;
+  color: #2f5d62;
 }
 
 .form-wrap{
@@ -472,10 +460,15 @@ footer{
 }
 
 .form-header{
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   height: 120px;
-  font-size: 24px;
+  font-size: 18px;
   padding-top: 20px;
+}
+
+.form-header p{
+  font-size: 14px;
 }
 
 .form-group{
@@ -486,35 +479,40 @@ footer{
   padding-top: 20px;
 }
 .actions{
-  margin: 0 auto;
+  margin: 20px auto 0;
   width: 50%;
   padding-top: 20px;
 }
 .registration-btn{
   margin: 0 auto;
-  background-color: royalblue;
+  background-color: #fea82f;
   color: #FFF;
-  border: 1px solid royalblue;
-  font-size: 14px;
+  border: 1px solid #fea82f;
+  border-radius: 20px;
+  font-size: 18px;
   line-height:40px ;
   cursor: pointer;
   width: 100%;
 }
 
-/*ログインページ*/
+/*////////////////////////////////////////////ログインページ*/
 .login-main{
   width: 100%;
   min-width: 800px;
   height: 100%;
+  padding: 20px;
   display: flex;
   justify-content: center;
+  color: #2f5d62;
 }
+
 .login-btn{
   margin: 0 auto;
-  background-color: royalblue;
+  background-color: #fea82f;
   color: #FFF;
-  border: 1px solid royalblue;
-  font-size: 14px;
+  border: 1px solid #fea82f;
+  border-radius: 20px;
+  font-size: 18px;
   line-height:40px ;
   cursor: pointer;
   width: 100%;
@@ -522,37 +520,30 @@ footer{
 
 /*////////////////////////////////////////////新規投稿ページ*/
 .new-post-contents{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  background-color: rgb(237, 235, 235);
+  width: 70%;
+  padding: 5vh 10vw;
+  margin: 20px auto;
+  background-color: white;
+  background-color: #f3f3f3;
 }
 
-.new-post-form{
-  height: calc(100vh - 100px) ;
-}
-.new-post-main{
-  width: 70vw;
-  padding: 5vh 10vw;
-  background-color: white;
-}
 .new-post-title{
   font-size: 22px;
   font-weight: bold;
   text-align: center;
-  background-color: rgb(135, 180, 235);
+  background-color: #2f5d62;
   color: #FFF;
 
 }
 .img-upload{
-  padding: 2vh 0;
+  padding: 16px 16px 8px;
 }
 .upload-text{
   font-weight: bold;
   margin-left: 16px;
   margin-right: 16px;
   margin-bottom: 10px;
+  padding: 10px;
 }
 .click-upload{
   text-align: center;
@@ -593,12 +584,12 @@ footer{
 }
 .post-btn{
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
   color: #fff;
-  background-color: red;
-  border: 1px solid red;
-  border-radius: 100px;  
+  background-color: #fea82f;
+  border: 1px solid #fea82f;
+  border-radius: 50px;  
   display: flex;
   justify-content: center;
   line-height: 48px;
@@ -606,11 +597,24 @@ footer{
 }
 
 /* /////////////////////////////////////////////////投稿詳細ページ*/
+.main_detail{
+  width: 70%;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f3f3f3;
+}
+
+.post__wrapper{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .post__heading{
   padding-top: 40px;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+
 }
 .post__user{
   display: block;
@@ -624,29 +628,39 @@ footer{
   text-align: center;
 }
 .post__image{
+  text-align: center;
+  background-color: #fff;
+}
+.post__image img{
   width: 800px;
   height: 550px;
-  margin: 0 auto;
-  padding: 16px 0;
+  padding: 20px;
 }
-.post___image{
-  width: 800px;
-  height: 500px;
+
+.post__body{
+  padding: 20px;
 }
+
 .post__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 8px;
-  border-top: 1px dotted #dcdcdc;
-  width: 50%;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  width: 800px;
   margin: 0 auto 10px;
 }
+
 .detail__title{
   font-size: 20px;
   font-weight: bold;
-  
+  border-bottom: 3px solid #fea82f;
 }
+.detail__text{
+  width: 700px;
+}
+
 .post__manage{
   display: flex;
   justify-content: center;
@@ -672,10 +686,11 @@ footer{
 
 /* //////////////////////////////////////////詳細  (コメント部分) */
 .comment-box{
-  width: 50%;
+  width: 800px;
   margin: 5vh auto;
   text-align: center;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+
 }
 
 .comment-text{
@@ -694,27 +709,43 @@ footer{
 }
 .comment-btn{
   line-height: 48px;
-  background-color: #22a251;
-  border: 1px solid #22a251;
+  background-color: #2f5d62;
+  border: 1px solid #2f5d62;
   color: #fff;
-  width: 50%;
+  width: 30%;
   min-width: 150px;
   font-size: 18px;
-  border-radius: 100px;
+  border-radius: 50px;
   margin-bottom: 2vh;
 }
+
+.comment-box h3{
+  text-align: left;
+  padding:0 30px ;
+}
+
 .comments{
   margin: 10px 0;
   padding: 30px;
   border-top: dotted 1px #dedede;
-  text-align: left;
 }
+
+.comments01{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  border-bottom: 1px solid #2f5d62;
+}
+
 .comment{
   text-align: left;
-  border-bottom: 1px solid #22a251;
 }
 .comment-delete{
   text-align: right;
+}
+
+.fa-trash-alt{
+  color: #2f5d62;
 }
 
 /* //////////////////////////////////////////////////編集ページ*/
@@ -735,38 +766,69 @@ footer{
 .user__wrapper{
   min-height: calc(100vh - 161px);
   width: 70%;
-  margin: 0 auto;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f3f3f3;
 }
 .page-heading{
   padding-top: 30px;
+  text-align: left;
+  border-bottom: 1px solid #2f5d62;
 }
+.user-info{
+  display: flex;
+  align-items: center;
+}
+
+.user-info01{
+  width: 30%
+}
+
 .user_icon{
   text-align: center;
 }
+
 .user_icon img{
   border-radius: 50%;
   background-color: white;
   border: 1px solid white;
-  height: 128px;
-  width: 128px;
+  height: 150px;
+  width: 150px;
 }
 
 .edit-info{
+  padding-top: 10px;
   text-align: center;
 }
+
+.user-edit{
+  border-bottom:3px solid #fea82f;
+  line-height: 1.3;
+}
+
+.user-likes{
+  border-bottom:3px solid #fea82f;
+  line-height: 1.3;
+}
+
+
+.user-info02{
+  width: 70%;
+}
+
 .table{
   border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-  margin-left: 17vw;
+  width: 90%;
+  margin: 10px auto;
 }
+
 .table__col1{
   text-align: left;
   font-weight: bold;
   background: #fafafa;
   border-collapse: collapse;
   border: 1px solid rgba(34, 49, 52);
-  width: 30%;
+  width: 20%;
   padding: 8px;
 }
 .table__col2{
@@ -774,7 +836,7 @@ footer{
   background: #fafafa;
   border: 1px solid rgba(34, 49, 52, 0.9);
   border-collapse: collapse;
-  width: 70%;
+  width: 80%;
   padding: 16px 8px;
 }
 
@@ -783,6 +845,7 @@ footer{
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  padding: 20px;
 }
 
 .board{
@@ -790,26 +853,55 @@ footer{
   width: 300px;
 }
 
-.board__body{
-text-align: center;
-}
 
-.post__img{
-  width: 300px;
-  height: 200px;
-}
+
+
 
 /* ///////////////////////////////////////////カテゴリ一覧（テスト）*/
-.grades{
-  font-size: 50px;
-  padding-left: 200px;
-  background-color: cadetblue;
+.grade_lists{
+  width: 80%;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f3f3f3;
+  color: #333;
+}
+.grade_lists h1{
+  text-align: center;
+  width: 20%;
+  font-size: 24px;
+  border-bottom:3px solid #fea82f;
+}
+.grade_lists h3{
+  padding-left: 20px;
+}
+
+.category{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.grades_parent{
+  margin: 20px;
+  padding: 10px;
+  width: 20%;
+  height: 10%;
+  font-size: 24px;
+  color: #fff;
+  background-color: #2f5d62;
+  border: 1px solid #2f5d62;
+  cursor: pointer;
 }
 .grades_children{
-  font-size: 30px;
-  background-color: rgb(168, 199, 200);
+  padding: 10px;
+  font-size: 18px;
   display: none;
 }
+.child-category a{
+  color: #fff;
+
+}
+
 .grades_grandchildren{
   font-size: 16px;
   background-color: rgb(205, 226, 227);
@@ -836,7 +928,7 @@ text-align: center;
 /*////////////////////////////////////////////top#about サイトの紹介ページ*/
 .sub-mainvisual{
   position: relative;
-  height: 180px;
+  height: 200px;
   border-bottom: 1px solid #2f5d62;
   background-image: url(teacher.jpg);
   background-size: cover;
@@ -885,8 +977,64 @@ text-align: center;
 
 .target-text{
   width: 50%;
+  padding: 10px;
+  background-color: #f3f3f3;
 }
 
 .target-text h2{
   border-bottom: 1px solid #2f5d62;
+}
+/*////////////////////////////////////////////エラーメッセージ*/
+.error-alert{
+  text-align: center;
+}
+
+/*//////////////////////////////////////////////検索結果一覧*/
+.container{
+  width: 95%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+.container h1{
+  text-align: center;
+  width: 20%;
+  margin-left: 50px;
+  font-size: 24px;
+  border-bottom:3px solid #fea82f;
+}
+
+
+.category_container{
+  background-color: #f3f3f3;
+  margin: 5%;
+  text-align: center;
+}
+
+.post-index{
+  width: 30%;
+  padding: 10px;
+  margin: 20px auto;
+  font-size: 24px;
+}
+.post-index .title{
+  border-bottom:3px solid #fea82f;
+}
+
+.category_links{
+  width: 90%;
+  margin: 0 auto;
+} 
+
+.category_link{
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: #2f5d62;
+  border-radius: 20px;
+  color: #fff;
+}
+.category_link:visited{
+  color: #fff;
 }

@@ -1,7 +1,8 @@
-
+<div class='sub-mainvisual'>
+  <h1>新規投稿</h1>
+</div>
 <div class="new-post-contents">
-  <div class="new-post-main">
-    <h2 class='new-post-title'>新規投稿</h2>
+    <h2 class='new-post-title'>新規投稿フォーム</h2>
     <%= form_with model: @post,url: posts_path,local: true do |f| %>
       <%# エラーメッセージ%>
         <%= render 'shared/error_messages', model: f.object %>
@@ -9,7 +10,7 @@
       <%# 画像の投稿%>
         <div class="img-upload">
           <div class='upload-text'>
-          ファイルのアップロード
+          板書写真のアップロード
           </div>
           <div class='click-upload'>
             <%= f.file_field :image, class:'post-image'%>
@@ -21,14 +22,14 @@
         <div class='new-post'>
           <div class='post-form'>
             <div class='bold-text'>授業名</div>
-            <%= f.text_field :class_name, class:'post-text',placeholder: '授業名(何時間目)を20字程度で入力。' %>
+            <%= f.text_field :class_name, class:'post-text',placeholder: '授業名を40字以内で入力してください。例）バスケットボール(4/8時間目)' %>
           </div>
           <div class='post-form'>
             <div class='bold-text'>授業の詳細</div>
-            <%= f.text_area :detail, class:'post-text big-form',placeholder:'授業の流れなど詳細を記入。'  %>
+            <%= f.text_area :detail, class:'post-text big-form',placeholder:'授業の流れや気づきなどを記入してください。'  %>
           </div>
           <div class='post-form' id='post_field'>
-            <div class='bold-text'>学年</div>
+            <div class='bold-text'>カテゴリー(学年・教科・単元)</div>
             <%= f.collection_select :grade_id, @parents, :id, :name, {prompt: "選択してください"},{class:'select-box',id:'grade_form'} %>
           </div>
         </div>
@@ -37,6 +38,5 @@
         <%= f.submit "投稿する",class:'post-btn' %>
       <%# /投稿ボタン%>
     <% end %>
-  </div>
 </div>
 
