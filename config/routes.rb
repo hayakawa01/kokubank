@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root to: 'top#index'
   get 'top/about',as: 'about'
   get 'posts/search'
+  get 'messages/index',to: 'messages#index'
+  post 'messages/confirm',to: 'messages#confirm'
+  post 'messages/done',to: 'messages#done'
   resources :posts do
     resources :comments, only:[:create, :destroy]
     resource :likes, only:[:create, :destroy]
