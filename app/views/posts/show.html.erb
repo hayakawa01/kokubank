@@ -1,33 +1,32 @@
-<%= render 'shared/header' %>
-
-<main class="main">
-  <div class="inner">
-    <div class="post__wrapper">
-      <p class="post__heading">
-        <%= "#{@post.class_name}"%>
-      </p>
-      <%= link_to "#{@post.user.nickname} の黒板", user_path(@post.user_id), class: "post__user"%>
-      <% if user_signed_in?  && @post.user_id == current_user.id %>
-        <div class="post__manage">
-          <%= link_to "編集する", edit_post_path(@post), class: "post__btn" %>
-          <%= link_to "削除する", post_path(@post.id),method: :delete, class: "post__btn" %>
-        </div>
-      <% end %>
-
-      <div id = 'like_<%= @post.id %>' class='like--btn'>
-        <%= render partial: 'likes/like', locals: {post: @post} %>
+<div class='sub-mainvisual'>
+  <h1>授業の詳細</h1>
+</div>
+<main class="main_detail">
+  <div class="post__wrapper">
+    <p class="post__heading">
+      <%= "#{@post.class_name}"%>
+    </p>
+    <%= link_to "#{@post.user.nickname} の黒板", user_path(@post.user_id), class: "post__user"%>
+    <% if user_signed_in?  && @post.user_id == current_user.id %>
+      <div class="post__manage">
+        <%= link_to "編集する", edit_post_path(@post), class: "post__btn" %>
+        <%= link_to "削除する", post_path(@post.id),method: :delete, class: "post__btn" %>
       </div>
-      
-      <div class="post__image">
-        <%= image_tag @post.image, class:"post___image" %>
-      </div>
-      <div class="post__body">
-        <div class="post__detail">
-          <p class="detail__title">授業の詳細</p>
-          <p class="detail__text">
-            <%= safe_join(@post.detail.split("\n"),tag(:br))%>
-          </p>
-        </div>
+    <% end %>
+
+    <div id = 'like_<%= @post.id %>' class='like--btn'>
+      <%= render partial: 'likes/like', locals: {post: @post} %>
+    </div>
+    
+    <div class="post__image">
+      <%= image_tag @post.image, class:"post___image" %>
+    </div>
+    <div class="post__body">
+      <div class="post__detail">
+        <p class="detail__title">授業の詳細</p>
+        <p class="detail__text">
+          <%= safe_join(@post.detail.split("\n"),tag(:br))%>
+        </p>
       </div>
     </div>
   </div>
@@ -37,28 +36,31 @@
       <%= form_with(model: [@post,@comment], local: true, method: :post) do |f|%>
         <%=f.text_area :text,row:'2',class:"comment-text"%>
           <p class="comment-warn">
-            相手のことを考え丁寧なコメントを心がけましょう。
+            ※相手のことを考え丁寧なコメントを心がけましょう。
           </p>
         <%= f.submit 'コメントする',class:"comment-btn" %>
       <% end %>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
-    <h3>＜コメント一覧＞</h3>
+   
     <div class="comments", id='comments'>
       <% @comments.each do |comment| %>
-        <div class='comment'>
-          <strong id='comment_username'><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
-          <% if current_user.id == comment.user_id %>
-            <%=link_to '削除', post_comment_path(@post,comment), method: :delete, class:'comment-delete' %>  
-          <% end %>
+        <div class='comments01'>
+          <div class='comment'>
+            <strong id='comment_username'><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </div>
+            <% if current_user.id == comment.user_id %>
+              <div class='delete-btn'>
+                <%=link_to post_comment_path(@post,comment), method: :delete, class:'comment-delete' do %>
+                  <i class="far fa-trash-alt fa-lg"></i>
+                <% end %>  
+              </div>
+            <% end %>
         </div>
       <% end %>
     </div>
   </div>
   <%# /コメント欄 %>
 </main>
-
-<%= render 'shared/footer' %>
-

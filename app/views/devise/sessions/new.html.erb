@@ -1,9 +1,10 @@
-<%= render 'shared/header' %>
-
+<div class='sub-mainvisual'>
+  <h1>ログイン</h1>
+</div>
 <%= form_with model: @user, url: user_session_path  ,local: true ,class:'login-main' do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
-      <h2>ログイン</h2>
+      <h2>ログインフォーム</h2>
     </div>
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -24,5 +25,3 @@
       </div>
   </div>
 <% end %>
-
-<%= render 'shared/footer' %>

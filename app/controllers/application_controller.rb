@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :search_post
 
+def after_sign_in_path_for(resource)
+  posts_path(resource)
+end
+
+
 
   private
   def basic_auth
@@ -16,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def search_post
-    @p = Post.ransack(params[:q])
-    @search_p = @p.result(distinct: true)
+    @search = Post.ransack(params[:q])
+    @search_posts = @search.result(distinct: true).order(created_at: "DESC").includes(:user).page(params[:page]).per(9)
   end
 end

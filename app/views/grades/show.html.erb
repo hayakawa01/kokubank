@@ -1,25 +1,33 @@
-<%= render 'shared/header' %>
-
-<div class='category_container'>
-  <div class= 'category_links'>
-    <% @grade_links.each do |grade| %>
-      <%=link_to grade.name, grade_path(grade)%>
-    <% end %>
-  </div>
+<div class='sub-mainvisual'>
+  <h1>カテゴリー検索一覧</h1>
 </div>
 
-<div class='post-container'>
-  <div class='post-index'>
-    <div class='title'>
-      <%= "#{@grade.name}の一覧"%>
+<div class='category_container'>
+  <div class='post-container'>
+    <div class='post-index'>
+      <div class='title'>
+        <%= "#{@grade.name}の一覧"%>
+      </div>
+    </div>
+  </div>
+
+  <div class= 'category_links'>
+    <% @grade_links.each do |grade| %>
+      <%=link_to grade.name, grade_path(grade), class:'category_link'%>
+    <% end %>
+  </div>
+
+
+  <div class='main-contents'>
+    <div class='main'>
+      <div class="post-contents">
         <ul class='post-lists'>
           <% @posts.each do |post| %>
             <%= render 'posts/post' ,post: post %>
           <% end %>
         </ul>
+      </div>
+      <%= paginate @posts %>
     </div>
   </div>
 </div>
-<%= paginate @posts %>
-
-<%= render 'shared/footer' %>

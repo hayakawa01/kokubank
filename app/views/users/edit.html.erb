@@ -1,9 +1,10 @@
-<%= render 'shared/header' %>
-
+<div class='sub-mainvisual'>
+  <h1>会員情報の編集</h1>
+</div>
 <%= form_with model: @user,local: true,class:'registration-main'  do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
-      <h2>ユーザー情報の編集</h2>
+      <h2>編集フォーム</h2>
     </div>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -55,6 +56,4 @@
     </div>
   </div>
 <% end %>
-
-<%= render 'shared/footer' %>
 

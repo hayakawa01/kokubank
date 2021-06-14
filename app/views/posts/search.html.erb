@@ -1,26 +1,24 @@
+<div class='sub-mainvisual'>
+  <h1>キーワードで探す</h1>
+</div>
 <div class="container">
-  <h5 class="results-title"><i class="fas fa-poll-h fa-2x my-orange"></i>検索結果一覧</h5>
-    <%=form_with model: @post, url: posts_search_path, method: :get, local: true do |f|%>
-      <%= f.select :keyword,[['新着順', 'new'],['人気順', 'likes']] %>
-      <%= f.submit %>
-    <% end %>
-    <div class="results">
+  <!--<div class='serch-sort'>
+    <%=render 'sort'%>
+  </div> -->
+  <h1>キーワード検索一覧</h1>
+  <div class="main-contents">
+    <div class='main'>
       <% if @results.length !=0 %>
-        <% @results.each do |result| %>
-          <div class="result-group">
-            <%= link_to post_path(result.id), class: "result-link" do%>
-            <div class="card-posts">
-              <%= image_tag result.image, class:"card-img" %> 
-                <div class="card-body">
-                  <h5 class="card-title"><%= result.class_name %></h5>
-                  <h5 class="card-username"><%= result.user.nickname %></h5>
-                </div>
-            </div>
+        <div class="post-contents">
+          <ul class='post-lists'>
+            <% @search_posts.each do |search_post| %>
+              <%= render 'post' ,post: search_post %>
             <% end %>
-          </div>
-        <% end %>
+          </ul>
+        </div>
       <% else %>
         <h5 class="alert">該当する投稿はありません！</h5>
       <% end %>
     </div>
+  </div>
 </div>

@@ -1,14 +1,21 @@
 <li class='list',id ='post_<%= post.id %>'>
   <div class='post-info'>
+    <div class='post-image'>
+      <%=link_to image_tag(post.image), post_path(post.id)%>
+    </div>  
     <div class='post-title'>
       <%=link_to post.class_name, post_path(post.id)  %>
     </div>
-    <%=link_to image_tag(post.image), post_path(post.id),class:'post-img' %>
-    <div class='post-name'>
-      <%=link_to post.user.nickname, user_path(post.user.id)%>
+    <div class='post-time'>
+      [ <%= post.created_at.strftime('%Y/%m/%d') %> ]
     </div>
-    <div id = 'like_<%= post.id %>'>
-      <%= render partial: 'likes/like', locals: {post: post} %>
+    <div class='post-subtext'>
+      <div id = 'like_<%= post.id %>'>
+        <%= render partial: 'likes/like', locals: {post: post} %>
+      </div>
+      <div class='post-name'>
+        <%=link_to post.user.nickname, user_path(post.user.id)%>
+      </div>
     </div>
   </div>
 </li>

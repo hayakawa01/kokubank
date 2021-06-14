@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }
-  root to: 'posts#index'
+  root to: 'top#index'
+  get 'top/about',as: 'about'
   get 'posts/search'
   resources :posts do
     resources :comments, only:[:create, :destroy]
