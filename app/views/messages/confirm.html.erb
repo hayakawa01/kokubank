@@ -1,0 +1,33 @@
+<div class='sub-mainvisual'>
+  <h1>お問い合わせ</h1>
+</div>
+<%= form_with model:@message, url: messages_done_path, local: true do |f| %>
+  <div class="message-form">
+    <h2>内容の確認</h2>
+    <div class='form-name'>
+      <strong>名前</strong>
+      <p>
+        <%= f.hidden_field :name %>
+        <%= @message.name %>
+      </p>
+    </div>
+    <div class='form-address'>
+      <strong>メールアドレス</strong>
+      <p>
+        <%= f.hidden_field :email %>
+        <%= @message.email %>
+      </p>
+    </div>
+    <div class='form-address'>
+      <strong>内容</strong>
+      <p>
+        <%= f.hidden_field :content %>
+        <%= simple_format(@message.content) %>
+      </p>
+    </div>
+    <div class="form-btn">
+      <%= f.submit '送信する' ,class:'form_btn'%>
+      <%= f.submit '戻る', name: 'back' ,class:'form_btn'%>
+    </div>  
+  </div>
+<% end %>
