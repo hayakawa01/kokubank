@@ -1,6 +1,12 @@
-<%= render 'shared/header' %>
-
-<p>いいねした投稿一覧</p>
-<%= render partial: 'posts/post', collection: @like_posts %>
-
-<%= render 'shared/footer' %>
+<div class='sub-mainvisual'>
+  <h1>いいね一覧</h1>
+</div>
+<div class='main-contents'>
+  <div class='main'>
+    <div class="post-contents">
+      <ul class='post-lists'>
+        <%= render partial: 'posts/post', collection: @like_posts %>
+      </ul>
+    </div>
+  </div>
+</div>
