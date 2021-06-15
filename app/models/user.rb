@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_one_attached :avatar
-#アップローダーのマウント
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id"
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id"  
 
 
 #更新の際パスワードが必要なくなる記述

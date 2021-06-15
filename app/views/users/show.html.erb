@@ -17,8 +17,9 @@
       </div>
       <div class='edit-info'>
         <% if current_user.id == @user.id && user_signed_in? %>
-          <%= link_to 'プロフィールの編集',edit_user_path(@user.id),class:'user-edit' %> 
-          <%= link_to 'いいねした投稿', likes_user_path(@user.id),class:'user-likes'%> 
+          <%= link_to 'プロフィールの編集',edit_user_path(@user.id),class:'user--info' %> 
+          <%= link_to 'いいねした投稿', likes_user_path(@user.id),class:'user--info'%> 
+          <%= link_to '通知一覧', notifications_path,class:'user--info'%>
         <% end %>
       </div>
     </div>

@@ -1,0 +1,22 @@
+<% visiter = notification.visiter %>
+<% item = notification.post %>
+
+<div class="notifications">
+  <div class='user-index'>
+    <%= link_to user_path(notification.visiter) do %>
+      <% if visiter.avatar.present? %>
+        <%= image_tag visiter.avatar, class:"profile-img-circle" %>
+      <% else %> 
+        <%= image_tag 'noavatar2.png', class:"profile-img-circle" %>
+      <% end %>
+    <% end %>
+    <div class='notification_text'>
+      <%= notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
+    </div>
+  </div>
+  <div class='notification_comment'>
+    <% if !@comment.nil? %>
+      <p class="moderate-font text-center" style="color: #C0C0C0;"><%= @comment %></p>
+    <% end %>
+  </div>
+</div>

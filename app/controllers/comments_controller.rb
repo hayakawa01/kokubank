@@ -4,7 +4,10 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comments = @post.comments.includes(:user).order('id DESC')
     @comment = Comment.new(comment_params)
+    @comment_post = @comment.post
     if @comment.save
+       #通知の設定
+       @comment_post.create_notification_comment!(current_user, @comment.id)
       redirect_back(fallback_location: root_path)
     else
       render "posts/show"
