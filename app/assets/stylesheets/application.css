@@ -1107,3 +1107,48 @@ footer{
   border-radius: 50px;
   margin: 2vh;
 }
+/*/////////////////////////////通知一覧*/
+.notification__wrapper{
+  min-height: calc(100vh - 161px);
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f3f3f3;
+
+}
+.delete_all{
+  display: flex;
+  align-items: center;
+  color: #2f5d62;
+}
+.user-index{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.notifications{
+  padding: 10px 5px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.profile-img-circle{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.notification_text a{
+  color: #2f5d62;
+}
+
+.notification_text a:visited{
+  color: #2f5d62;
+}
+
+.notification_comment{
+  padding-left: 50px;
+  text-align: left;
+}
