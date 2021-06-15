@@ -9,7 +9,7 @@ module NotificationsHelper
       when "like" then
         tag.a(notification.visiter.nickname, href:user_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:post_path(notification.post_id), style:"font-weight: bold;")+"にいいねしました"
       when "comment" then
-        @comment = Comment.find_by(id: @visiter_comment)&.content
+        @comment = Comment.find_by(id: @visiter_comment)&.text
         tag.a(@visiter.nickname, href:user_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:post_path(notification.post_id), style:"font-weight: bold;")+"にコメントしました"
     end
   end

@@ -26,12 +26,18 @@ class Post < ApplicationRecord
 
   #いいね通知機能のメソッド
   def create_notification_by(current_user)
-    notification = current_user.active_notifications.new(
-      post_id: id,
-      visited_id: user_id,
-      action: "like"
-    )
-    notification.save if notification.valid?
+    temp = Notification.where(["visiter_id = ? and visited_id = ? and post_id = ? and action = ?", current_user.id, user_id, id, 'like'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        post_id: id,
+        visited_id: user_id,
+        action: "like"
+      )
+      if notification.visiter_id == notification.visited_id
+        notification.checked = true
+      end
+      notification.save if notification.valid?
+    end
   end
 
   # コメント通知機能のメソッド
@@ -45,14 +51,14 @@ class Post < ApplicationRecord
 
   def save_notification_comment!(current_user, comment_id, visited_id)
     notification = current_user.active_notifications.new(
-      item_id: id,
+      post_id: id,
       comment_id: comment_id,
       visited_id: visited_id,
       action: 'comment'
     )
     #自分の投稿に対する自分のコメントは通知済みなので通知されないように
     if notification.visiter_id == notification.visited_id
-      notification.check = true
+      notification.checked = true
     end
     notification.save if notification.valid?
   end

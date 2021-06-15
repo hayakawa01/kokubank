@@ -1,4 +1,4 @@
-class Users::NotificationsController < ApplicationController
+class NotificationsController < ApplicationController
   def index
     #currentuserの投稿に紐付いた通知全て
     @notifications = current_user.passive_notifications.page(params[:page]).per(20)
