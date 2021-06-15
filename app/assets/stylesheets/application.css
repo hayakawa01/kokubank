@@ -949,6 +949,10 @@ footer{
 .about-text{
   padding: 0 100px;
 }
+.text-about-m{
+  margin-top: 20px;
+  text-align: center;
+}
 .about-text h1{
    font-size: 24px;
 }
