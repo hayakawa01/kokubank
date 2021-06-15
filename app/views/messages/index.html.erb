@@ -6,16 +6,7 @@
     <h2>お問い合わせフォーム</h2>
     <h3>※会員登録いただいた会員様からのお問い合わせに限らせていただきます。</h3>
 
-      <% if @message.errors.present? %>
-        <div class='error-alert'>
-          <strong>入力内容にエラーがあります</strong>
-          <ul>
-            <% @message.errors.each do |attr, error| %>
-              <li><%= error %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= render 'shared/error_messages', model: f.object %>
 
     <div class='form-name'>
       <strong>名前</strong>

@@ -11,6 +11,7 @@ ja:
     models:
       user: ユーザー
       post: 投稿
+      comment: コメント
     attributes:
       user:
         id: ID
@@ -29,10 +30,18 @@ ja:
       post:
         class_name: 授業名
         detail: 授業の詳細
-        grade_id: 学年
-        subject_id: 教科
-        unit_id: 単元
+        grade_id: カテゴリー
         image: 画像
+      comment:
+        text: コメント
+  activemodel:
+    models: 
+      message: お問い合わせフォーム
+    attributes:
+      message:
+        name: 名前
+        email: メールアドレス
+        content: お問い合わせ内容
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
