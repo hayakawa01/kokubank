@@ -4,6 +4,12 @@ class LikesController < ApplicationController
 
   def create
     Like.create(user_id: current_user.id, post_id: @post.id)
+    #通知の設定
+    @post.create_notification_by(current_user)
+    respond_to do |format|
+      format.html{redirect_to request.referrer}
+      format.js
+    end
   end
 
   def destroy
