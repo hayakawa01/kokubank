@@ -412,7 +412,7 @@ footer{
 
 .post-info .post-image{
   position: relative;
-  box-shadow: 0px 4px 4px rgba(0,0,0,.4);
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.4);
 }
 
 .post-title{
@@ -830,7 +830,7 @@ footer{
   font-weight: bold;
   background: #fafafa;
   border-collapse: collapse;
-  border: 1px solid rgba(34, 49, 52);
+  border: 1px solid rgb(34, 49, 52);
   width: 20%;
   padding: 8px;
 }
