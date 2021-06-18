@@ -164,32 +164,5 @@ RSpec.describe "Posts", type: :system do
         expect(page).to have_no_content('削除する')
       end
     end
-
-    context 'コメントができる' do
-      it 'ログインしたユーザーはツイート詳細ページに遷移すればコメント投稿欄が表示される' do
-        @post = FactoryBot.create(:post)
-        @comment = FactoryBot.create(:comment)
-        @user = FactoryBot.create(:user)
-        # @user のログイン
-        visit root_path
-        expect(page).to have_content('ログイン')
-        visit new_user_session_path
-        fill_in 'user[email]', with: @user.email
-        fill_in 'user[password]', with: @user.password
-        find('input[name="commit"]').click
-        # ログインすると投稿一覧ページへ遷移
-        expect(current_path).to eq(posts_path)
-        # 投稿詳細ページへ
-        visit post_path(@post)
-        # 詳細ページにはコメントフォームがある
-        expect(page).to have_selector('form')
-        # コメントを入力する
-        fill_in 'comment[text]', with: @comment
-        # コメントを送信すると、Commentモデルのカウントが１増える
-        expect{
-          find('input[name="commit"]').click
-        }.to change { Comment.count }.by(1)
-      end
-    end
   end
 end
