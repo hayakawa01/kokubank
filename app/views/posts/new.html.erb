@@ -30,7 +30,7 @@
           </div>
           <div class='post-form' id='post_field'>
             <div class='bold-text'>カテゴリー(学年・教科・単元)</div>
-            <%= f.collection_select :grade_id, @parents, :id, :name, {prompt: "選択してください"},{class:'select-box',id:'post_grade_id'} %>
+            <%= f.collection_select :grade_id, @parents, :id, :name, {prompt: "選択してください"},{class:'select-box',id:'grade_form'} %>
           </div>
         </div>
       <%# /授業名と授業の内容%>

@@ -66,23 +66,22 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
 
-   # テスト全体の前に実行する処理をブロックで記述
+  # テスト全体の前に実行する処理をブロックで記述
   config.before(:suite)do
+  # このタイミングで'transaction'でデータベースを全削除しておく
+    DatabaseCleaner.clean_with(:truncation)
+    # 初期データ作成
+    load Rails.root.join('db', 'seeds.rb')
+
   # データベースをCleanする方法を'transaction(一定の処理)'に指定
     DatabaseCleaner.strategy = :transaction
-  # このタイミングで'transaction'でデータベースをCleanしておく
-    DatabaseCleaner.clean_with(:transaction)
   end
+  
   # 各exampleの前および後に実行する処理をブロックで記述
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
       # ここがexampleの実行タイミング
       example.run
-      # ここに処理を記述する ##
     end
-  end
-
-  config.before(:suite) do
-    load Rails.root.join('db', 'seeds.rb')
   end
 end
