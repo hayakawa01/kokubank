@@ -2,7 +2,7 @@ window.addEventListener('load',function(){
 //子要素を選択するフォーム
 function add_childSelect_tag() {
   let child_select_form = `
-                          <select name="post[grade_id]" id="post_grade_id" class="child_grade_id">
+                          <select name="post[grade_id]" id="post_grade_id2" class="child_grade_id">
                           <option value="">教科を選択</option>
                           </select>
                           `
@@ -48,7 +48,7 @@ $("#grade_form").on("change",function() {
 //孫要素の選択フォーム
 function add_grandchildSelect_tag() {
   let grandchild_select_form = `
-                          <select name="post[grade_id]" id="post_grade_id" class="grandchild_grade_id">
+                          <select name="post[grade_id]" id="post_grade_id3" class="grandchild_grade_id">
                           <option value="">単元を選択</option>
                           </select>
                           `

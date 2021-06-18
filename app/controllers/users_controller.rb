@@ -5,8 +5,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user == current_user
-      @user.update(user_params)
+    if @user == current_user && @user.update(user_params)
       redirect_to user_path(@user.id)
     else
       render :edit

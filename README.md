@@ -19,7 +19,9 @@
 ### Association
 has_many :posts
 has_many :comments
-
+has_many :likes
+has_many :active_notifications
+has_many :passive_notifications
 
 ## posts テーブル
 
@@ -32,8 +34,10 @@ has_many :comments
 
 ### Association
 belongs_to :user
-has_many :comments
 belongs_to :grade
+has_many :comments
+has_many :likes
+has_many :notifications
 
 ## comments テーブル
 
@@ -73,18 +77,19 @@ has_many :posts
 has_ancestry
 
 
-## subjects テーブル
+## notifications テーブル
 
-| Column                 | Type       | Options                  |
-| ---------------------- | ---------- | ------------------------ |
-| name                   | string     | null: false              |
-| grade                  | references | foreign_key: true        |
+| Column                 | Type       | Options           |
+| ---------------------- | ---------- | ----------------- |
+| visiter_id             | integer    | foreign_key: true |
+| visited_id             | integer    | foreign_key: true |
+| post_id                | integer    |                   |
+| comment_id             | integer    |                   |
+| action                 | string     |                   |
+| checked                | boolean    | null: false       |
 
-
-## units テーブル
-
-| Column                 | Type       | Options                  |
-| ---------------------- | ---------- | ------------------------ |
-| name                   | string     | null: false              |
-| subject                | references | foreign_key: true        |
-
+### Association
+belongs_to :post
+belongs_to :comment
+belongs_to :visiter
+belongs_to :visited
