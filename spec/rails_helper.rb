@@ -5,6 +5,8 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -33,12 +35,13 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
-
+  
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
@@ -61,4 +64,24 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include FactoryBot::Syntax::Methods
+
+  # テスト全体の前に実行する処理をブロックで記述
+  config.before(:suite)do
+  # このタイミングで'transaction'でデータベースを全削除しておく
+    DatabaseCleaner.clean_with(:truncation)
+    # 初期データ作成
+    load Rails.root.join('db', 'seeds.rb')
+
+  # データベースをCleanする方法を'transaction(一定の処理)'に指定
+    DatabaseCleaner.strategy = :transaction
+  end
+  
+  # 各exampleの前および後に実行する処理をブロックで記述
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      # ここがexampleの実行タイミング
+      example.run
+    end
+  end
 end

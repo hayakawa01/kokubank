@@ -1,10 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameter,if: :devise_controller?
-  before_action :basic_auth
+  before_action :basic_auth if Rails.env.production?
   before_action :search_post
 
 def after_sign_in_path_for(resource)
-  posts_path(resource)
+  posts_path
+end
+
+def after_sign_up_path_for(resource)
+  posts_path
 end
 
 

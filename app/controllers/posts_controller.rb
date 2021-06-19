@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_parents,only:[:new,:create,:edit,:update]
   before_action :set_post,only:[:show,:edit,:update,:destroy]
-  before_action :correct_edit,only:[:edit,:update,:destroy]
+  before_action :correct_edit,only:[:create,:edit,:update,:destroy]
   before_action :search_post
   
 
@@ -68,7 +69,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image,:class_name, :detail, :grade_id, :subject_id, :unit_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:image,:class_name, :detail, :grade_id).merge(user_id: current_user.id)
   end
 
   def set_post

@@ -30,7 +30,7 @@ ja:
       post:
         class_name: 授業名
         detail: 授業の詳細
-        grade_id: カテゴリー
+        grade: カテゴリー
         image: 画像
       comment:
         text: コメント
