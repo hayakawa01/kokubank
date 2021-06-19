@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe "Posts", type: :request do
   before do
     @user = FactoryBot.create(:user)
-    another_user = FactoryBot.create(:user)
-    @post = FactoryBot.create(:post)
-    
+    @post = FactoryBot.create(:post)  
   end
 
   describe "GET #index" do
@@ -32,20 +30,17 @@ RSpec.describe "Posts", type: :request do
       end
     end
   end
-#//////////////////////////////途中で止める→結合テストを先にやろうと思う////////////
+
   describe "GET #new" do
     context 'ログイン時' do
       before do
         sign_in @user
       end
       it "newアクションにリクエストすると、正常にレスポンスが返ってくる" do
-        binding.pry
         get posts_path
         expect(response.status).to eq 200
-        #expect(response).to render_template('posts/new')
       end
     end
-#///////////////////////////////////////////////////////////////////////////////////
     context '非ログイン時'do
       it "indexアクションにリクエストすると、ログイン画面へ遷移する" do
         get posts_path
