@@ -3,7 +3,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string      :class_name, null:false
       t.text        :detail,     null:false
-      t.references  :grade,      foreign_key: true
+      t.integer     :grade_id,   null: false
+      t.integer     :subject_id, null: false
+      t.integer     :unit_id,    null: false
       t.references  :user,       foreign_key: true
       t.timestamps
     end
