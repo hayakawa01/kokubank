@@ -4,7 +4,6 @@
 <%= form_with model: @message, url: messages_confirm_path,local: true do |f| %>
   <div class="message-form">
     <h2>お問い合わせフォーム</h2>
-    <h3>※会員登録いただいた会員様からのお問い合わせに限らせていただきます。</h3>
 
       <%= render 'shared/error_messages', model: f.object %>
 

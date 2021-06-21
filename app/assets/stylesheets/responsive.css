@@ -1,0 +1,144 @@
+@media(max-width: 1024px) {
+  /* ヘッダーとハンバーガーメニュー↓ */
+  .responsive-cover{
+    background-color: #fff;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    position: relative;
+  }
+
+  header.menu{
+    display: none;
+  }
+
+  .responsive{
+    background-color: #fff;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+  }
+
+  .responsive img{
+    margin-top: 15px;
+  }
+  .response-search{
+    position: absolute;
+    top: 15px;
+    right: 60px;
+  }
+
+  .responsive i.fa-bars{
+    float: right;
+    width: 20px;
+    margin-top: 22px;
+    margin-right: 20px;
+  }
+
+  .responsive-btn{
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    transform: scale(1.5);
+    opacity: 0;
+    z-index: 2000;
+  }
+
+  .responsive-btn:checked ~ .responsive-nav{
+    transform: translateY(0%);
+  }
+
+  .responsive-nav{
+    background-color: #fff;
+    text-align: left;
+    transform:translateY(-130%);
+    transition: 0.5s;
+    z-index: 10;
+  }  
+
+  .responsive-menu{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .responsive-menu a{
+    padding:  18px 0;
+    color: #2f5d62;
+    border-bottom: 1px solid #2f5d62;
+    font-size: 14px;
+  }
+
+  .responsive-menu .fas{
+    padding: 0 10px;
+  }
+
+  .responsive-menu li a:hover{
+    text-decoration: underline;
+  }
+
+  .responsive-menu img{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #2f5d62;
+    border-radius: 50%;
+    margin-bottom: 0;
+  }
+  /* メイン部分↓ */
+
+  div.contents{
+    padding: 0;
+    width: 100%;
+  }
+
+  /*  posts#show  */
+  main.main_detail{
+    width: 90%;
+  }
+
+  /*  devise#registration  */
+  div.form-wrap{
+    width: 70%;
+  }
+
+  /*  message#index  */
+  div.message-form{
+    width: 70%;
+  }
+
+  /* posts#index   */
+  .post-lists>.list{
+    width: calc(100% / 3 - 30px);
+  }
+
+  /*top#index*/
+  div.main-text-box{
+    padding: 40px 40px 140px;
+  }
+
+  div.about{
+    width: 50%;
+  }
+  div.news{
+    width:50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p.btn-about{
+    position: absolute;
+    left: 60%;
+    width: 60%;
+  }
+
+  /*top#about*/
+  div.about-text{
+    padding: 0 10%;
+  }
+  div.target{
+    padding: 20px 5%;
+}}
+
+@media(max-width: 599px) {}
