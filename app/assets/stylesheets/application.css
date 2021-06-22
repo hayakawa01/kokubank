@@ -452,7 +452,6 @@ footer{
 /* ////////////////////////////////////////////////新規登録ページ */
 .registration-main{
   width: 100%;
-  min-width: 800px;
   height: 100%;
   padding: 20px;
   display: flex;
@@ -505,7 +504,6 @@ footer{
 /*////////////////////////////////////////////ログインページ*/
 .login-main{
   width: 100%;
-  min-width: 800px;
   height: 100%;
   padding: 20px;
   display: flex;
@@ -762,6 +760,7 @@ footer{
   display: block;
   margin: auto;
 }
+
 #currentThumb img {
   width: 600px;
   height: 300px;
@@ -859,9 +858,6 @@ footer{
   height: 250px;
   width: 300px;
 }
-
-
-
 
 
 /* ///////////////////////////////////////////カテゴリ一覧（テスト）*/

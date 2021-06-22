@@ -1,3 +1,4 @@
+/*///////////////////////////////////////////////////////タブレット対応*/
 @media(max-width: 1024px) {
   /* ヘッダーとハンバーガーメニュー↓ */
   .responsive-cover{
@@ -22,9 +23,11 @@
     position: fixed;
   }
 
-  .responsive img{
+  .responsive img.kokubank-icon{
     margin-top: 15px;
+    margin-left: 40px;
   }
+
   .response-search{
     position: absolute;
     top: 15px;
@@ -69,6 +72,7 @@
     color: #2f5d62;
     border-bottom: 1px solid #2f5d62;
     font-size: 14px;
+  
   }
 
   .responsive-menu .fas{
@@ -80,11 +84,11 @@
   }
 
   .responsive-menu img{
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     border: 1px solid #2f5d62;
     border-radius: 50%;
-    margin-bottom: 0;
+    margin-left: 10px;
   }
   /* メイン部分↓ */
 
@@ -109,8 +113,8 @@
   }
 
   /* posts#index   */
-  .post-lists>.list{
-    width: calc(100% / 3 - 30px);
+  ul.post-lists>.list{
+    width: calc(100% / 2 - 30px);
   }
 
   /*top#index*/
@@ -141,4 +145,306 @@
     padding: 20px 5%;
 }}
 
-@media(max-width: 599px) {}
+
+/*//////////////////////////////////////////////スマートフォン対応*/
+@media(max-width: 599px) {
+  /*////////////////////////////////////////////header*/
+  div.responsive-cover img.kokubank-icon{
+    float: left;
+    margin: 15px 0 0 5px;
+    width: 30%;
+  }
+  .response-search{
+    position: absolute;
+    top: 18px;
+    right: 60px;
+  }
+
+  /*////////////////////////////////////////////top#index*/
+  div.main-visual{
+    height: 300px;
+  }
+
+  div.main-visual-head{
+    padding: 20px 0 10px 30px ;
+    font-size: 16px;
+  }
+
+  p.main-visual-text{
+    font-size: 25px;
+  }
+
+  div.main-text-box{
+    display: block;
+  }
+  h2.title-about{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2f5d62;
+  }
+
+  div.main-text-box{
+    padding: 40px 40px 140px;
+    font-size: 12px;
+  }
+
+  div.about{
+    width: 100%;
+  }
+  div.news{
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p.btn-about{
+    position: absolute;
+    left: 70%;
+    width: 50%;
+  }
+  p.btn-about a{
+    font-size: 14px;
+    padding: 9px 5px;
+  }
+
+  div.main-slide li{
+    display: block;
+    width: 100%;
+  }
+
+  h2.title-slide{
+    width: 80%;
+    margin: 20px auto 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2f5d62;
+  }
+
+  section.main-signup{
+    padding: 10px 20px 100px;
+  }
+
+  h2.title-signup{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2f5d62;
+  }
+
+  p.text-signup{
+    font-size: 11px;
+  }
+  p.btn-signup{
+    position: absolute;
+    left: 70%;
+    bottom: 10px;
+    width: 50%;
+  }
+  p.btn-signup a{
+    font-size: 14px;
+    padding: 9px 5px;
+  }
+
+  /*////////////////////////////////////////////top#about*/
+  div.sub-mainvisual h1{
+    position: absolute;
+    top: 80px;
+    left: 45px;
+  }
+  p.text-about-title{
+    font-size: 16px;
+    width: 100%;
+  }
+  p.text-about-m{
+    font-size: 12px;
+  }
+  p.text-about{
+    font-size: 12px;
+  }
+  div.target{
+    display: block;
+  }
+  div.target-img{
+    width: 100%;
+  }
+  div.target-img img{
+    height: 150px;
+  }
+
+  div.target-text{
+    width: 100%;
+  }
+  div.tyuken{
+    display: flex;
+    flex-direction: column;
+  }
+  div.tyu-t{
+    order: 1;
+  }
+
+/*////////////////////////////////////////////user#session*/
+  form.login-main{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  div.form-wrap{
+    width: 100%;
+  }
+  /*////////////////////////////////////////////user#registration*/
+  form.registration-main{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  div.form-header{
+    width: 80%;
+  }
+  div.form-header p{
+    font-size: 11px;  
+  }
+  div.form-group{
+    width: 95%;
+  }
+/*////////////////////////////////////////////message#index*/
+  div.message-form{
+    width: 95%;
+  }
+  div.message-form h2{
+    width: 60%;
+    font-size: 16px;
+  }
+  div.form-name p input{
+    width: 80%;
+  }
+  div.form-address p input{
+    width: 80%;
+  }
+  div.form-name p input{
+    width: 80%;
+  }
+  div.form-btn input{
+    font-size: 16px;
+  }
+  /*////////////////////////////////////////////errors*/
+  div.field_with_errors input{
+    width: 100%;
+  }
+  div.field_with_errors textarea{
+    width: 100%;
+  }
+  div.field_with_errors select{
+    width: 100%;
+  }
+  div.error-alert{
+    width: 80%;
+    font-size: 11px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /*///////////////////////////////////////posts#index*/
+  div.main-contents{
+    margin: 0px;
+    width: 100%;
+    display: block;
+  }
+  div.main{
+    width: 100%;
+    margin: 0;
+  }
+  div.post-contents{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+  ul.post-lists{
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  ul.post-lists>.list{
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 95%;
+  }
+  div.post-info{
+    width: 100%;
+  }
+  /*///////////////////////////////////////posts#new*/
+  div.new-post-contents{
+    width: 95%;
+  }
+  div.new-post-contents h2{
+    font-size: 16px;
+  }
+  div.upload-text{
+    font-size: 12px;
+    margin: 0 0 10px;
+  }
+  div.click-upload{
+    font-size: 12px;
+  }
+  div.bold-text{
+    font-size: 12px;
+  }
+  input.post-text{
+    font-size: 12px;
+  }
+  textarea.post-text{
+    font-size: 12px;
+  }
+  select.select-box{
+    font-size: 12px;
+  }
+  input.post-btn{
+    font-size: 16px;
+  }
+  /*///////////////////////////////////////posts#show*/
+  p.post__heading{
+    font-size: 16px;
+  }
+  a.post__user{
+    font-size: 12px;
+  }
+  div.post__image{
+    width: 100%;
+    height: 200px;
+  }
+  div.post__image img{
+    width: 100%;
+    height: 200px;
+    padding: 5px;
+  }
+  div.post__body{
+    padding: 0px;
+  }
+
+  main.main_detail{
+    padding: 10px;
+  }
+  div.post__detail{
+    width: 100%;
+    display: block;
+    padding: 5px;
+  }
+  p.detail__title{
+    font-size: 12px;
+  }
+  p.detail__text{
+    width: 100%;
+    font-size: 12px;
+  }
+  div.comment-box{
+    width: 100%;
+  }
+  p.comment-warn{
+    font-size: 11px;
+  }
+  input.comment-btn{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  div.comment{
+    font-size: 12px;
+  }
+
+}
