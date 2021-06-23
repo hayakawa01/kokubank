@@ -1,0 +1,705 @@
+/*///////////////////////////////////////////////////タブレット(iPad)対応*/
+@media(max-width: 1024px) {
+  /*//////////////////////////// ヘッダーとハンバーガーメニュー↓ */
+  .responsive-cover{
+    background-color: #fff;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    position: relative;
+  }
+
+  header.menu{
+    display: none;
+  }
+
+  .responsive{
+    background-color: #fff;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+  }
+
+  .responsive img.kokubank-icon{
+    margin-top: 15px;
+    margin-left: 40px;
+  }
+
+  .response-search{
+    position: absolute;
+    top: 15px;
+    right: 60px;
+  }
+
+  .responsive i.fa-bars{
+    float: right;
+    width: 20px;
+    margin-top: 22px;
+    margin-right: 20px;
+  }
+
+  .responsive-btn{
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    transform: scale(1.5);
+    opacity: 0;
+    z-index: 2000;
+  }
+
+  .responsive-btn:checked ~ .responsive-nav{
+    transform: translateY(0%);
+  }
+
+  .responsive-nav{
+    background-color: #fff;
+    text-align: left;
+    transform:translateY(-130%);
+    transition: 0.5s;
+    z-index: 10;
+  }  
+
+  .responsive-menu{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .responsive-menu a{
+    padding:  18px 0;
+    color: #2f5d62;
+    border-bottom: 1px solid #2f5d62;
+    font-size: 14px;
+  
+  }
+
+  .responsive-menu .fas{
+    padding: 0 10px;
+  }
+
+  .responsive-menu li a:hover{
+    text-decoration: underline;
+  }
+
+  .responsive-menu img{
+    height: 25px;
+    width: 25px;
+    border: 1px solid #2f5d62;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  /* メイン部分↓ */
+
+  div.contents{
+    padding: 0;
+    width: 100%;
+  }
+  /*///////////////////////////////////////posts#new*/
+  div.new-post-contents{
+    width: 90%;
+  }
+  /*////////////////////////////////////////////  posts#show  */
+  main.main_detail{
+    width: 90%;
+  }
+  div.post__wrapper{
+    width: 100%;
+  }
+  p.post__heading{
+    font-size: 36px;
+  }
+  div.post__image img{
+    height: 300px;
+  } 
+  div.post__detail{
+    width: 100%;
+    display: block;
+    padding: 5px;
+  }
+  p.detail__title{
+    text-align: center;
+  }
+  p.detail__text{
+    width: 100%;
+    font-size: 16px;
+    padding-top: 10px;
+  }
+  div.comment-box{
+    width: 100%;
+  }
+  p.comment-warn{
+    font-size: 12px;
+  }
+  input.comment-btn{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  div.comment{
+    font-size: 14px;
+  }
+  /*///////////////////////////////////////users#show*/
+  div.user__wrapper{
+    width: 90%;
+  }
+  a.user--info{
+    width: 90%;
+  }
+  table.table{
+    width: 100%;
+    margin: 10px 0 10px;
+  }
+  th.table__col1{
+    width: 30%;
+  }
+  td.table__col2{
+    width: 70%;
+  }
+  /*////////////////////////////////////////  devise#registration  */
+  div.form-wrap{
+    width: 90%;
+  }
+
+  /*/////////////////////////////////////////////  message#index  */
+  div.message-form{
+    width: 90%;
+  }
+
+  /*/////////////////////////////////////////////// posts#index   */
+  ul.post-lists>.list{
+    width: calc(100% / 2 - 30px);
+  }
+
+  /*////////////////////////////////////////////////////top#index*/
+  div.main-text-box{
+    padding: 40px 40px 140px;
+  }
+
+  div.about{
+    width: 50%;
+  }
+  div.news{
+    width:50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p.btn-about{
+    position: absolute;
+    left: 60%;
+    width: 60%;
+  }
+
+  /*//////////////////////////////////////////////////top#about*/
+  div.about-text{
+    padding: 0 10%;
+  }
+  div.target{
+    padding: 20px 5%;
+}
+
+/*//////////////////////////////////////////////////grade#index*/
+  div.grade_lists{
+    width: 95%;
+  }
+  div.grade_lists h1{
+    width: 60%;
+    font-size: 24px;
+    margin: 0 auto;
+  }
+  div.grade_lists h3{
+    font-size: 18px;
+    text-align: center;
+  }
+  div.category{
+    display: block;
+  }
+  div.category_links{
+    width: 95%;
+    height: 10%;
+    margin: 30px auto;
+  } 
+  a.category_link{
+    font-size: 20px;
+    margin: 20px ;
+  }
+
+  ul.grades_parent{
+    width: 90%;
+    margin: 20px auto;
+  }
+  div.main-contents{
+    margin: 20px;
+  }
+  div.post-contents{
+    padding: 30px 0;
+  }
+
+  /*//////////////////////////////////////////////////grade#show*/
+  div.category_container{
+    width: 90%;
+    margin: 0 auto;
+  }
+  div.post-index{
+    width: 60%;
+    font-size: 20px;
+    margin: 10px auto;
+  }
+
+  div.category_links{
+    width: 100%;
+  } 
+  a.category_link{
+    font-size: 16px;
+    margin: 0 5px;
+  }
+
+  /*///////////////////////////////////////notification#index*/
+  div.notification__wrapper{
+    width: 95%;
+    font-size: 18px;
+  }
+  div.notifications{
+    width: 100%;
+  }
+  div.notification_text{
+    padding-left: 10px;
+    margin-left: 5px;
+  }
+  div.user-index a{
+    width: 50px;
+    height: 50px;
+  }
+  a.profile-img-circle{
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+}
+
+
+
+/*//////////////////////////////////////////////スマートフォン対応*/
+@media(max-width: 599px) {
+  /*////////////////////////////////////////////header*/
+  div.responsive-cover img.kokubank-icon{
+    float: left;
+    margin: 15px 0 0 5px;
+    width: 30%;
+  }
+  .response-search{
+    position: absolute;
+    top: 18px;
+    right: 60px;
+  }
+
+  /*////////////////////////////////////////////top#index*/
+  div.main-visual{
+    height: 300px;
+  }
+
+  div.main-visual-head{
+    padding: 20px 0 10px 30px ;
+    font-size: 16px;
+  }
+
+  p.main-visual-text{
+    font-size: 25px;
+  }
+
+  div.main-text-box{
+    display: block;
+  }
+  h2.title-about{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2f5d62;
+  }
+
+  div.main-text-box{
+    padding: 40px 40px 140px;
+    font-size: 12px;
+  }
+
+  div.about{
+    width: 100%;
+  }
+  div.news{
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p.btn-about{
+    position: absolute;
+    left: 70%;
+    width: 50%;
+  }
+  p.btn-about a{
+    font-size: 14px;
+    padding: 9px 5px;
+  }
+
+  div.main-slide li{
+    display: block;
+    width: 100%;
+  }
+
+  h2.title-slide{
+    width: 80%;
+    margin: 20px auto 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2f5d62;
+  }
+
+  section.main-signup{
+    padding: 10px 20px 100px;
+  }
+
+  h2.title-signup{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2f5d62;
+  }
+
+  p.text-signup{
+    font-size: 11px;
+  }
+  p.btn-signup{
+    position: absolute;
+    left: 70%;
+    bottom: 10px;
+    width: 50%;
+  }
+  p.btn-signup a{
+    font-size: 14px;
+    padding: 9px 5px;
+  }
+
+  /*////////////////////////////////////////////top#about*/
+  div.sub-mainvisual h1{
+    position: absolute;
+    top: 100px;
+    left: 2px;
+  }
+  p.text-about-title{
+    font-size: 16px;
+    width: 100%;
+  }
+  p.text-about-m{
+    font-size: 12px;
+  }
+  p.text-about{
+    font-size: 12px;
+  }
+  div.target{
+    display: block;
+  }
+  div.target-img{
+    width: 100%;
+  }
+  div.target-img img{
+    height: 150px;
+  }
+
+  div.target-text{
+    width: 100%;
+  }
+  div.tyuken{
+    display: flex;
+    flex-direction: column;
+  }
+  div.tyu-t{
+    order: 1;
+  }
+
+/*////////////////////////////////////////////user#session*/
+  form.login-main{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  div.form-wrap{
+    width: 100%;
+  }
+  /*////////////////////////////////////////////user#registration*/
+  form.registration-main{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  div.form-header{
+    width: 80%;
+  }
+  div.form-header p{
+    font-size: 11px;  
+  }
+  div.form-group{
+    width: 95%;
+  }
+  input.registration-btn{
+    font-size: 16px;
+
+  }
+/*////////////////////////////////////////////message#index*/
+  div.message-form{
+    width: 95%;
+    font-size: 12px;
+  }
+  div.message-form h2{
+    width: 60%;
+    font-size: 16px;
+  }
+  div.form-name p input{
+    width: 80%;
+  }
+  div.form-address p input{
+    width: 80%;
+  }
+  div.form-name p input{
+    width: 80%;
+  }
+  div.form-btn input{
+    font-size: 16px;
+  }
+  /*////////////////////////////////////////////errors*/
+  div.field_with_errors input{
+    width: 100%;
+  }
+  div.field_with_errors textarea{
+    width: 100%;
+  }
+  div.field_with_errors select{
+    width: 100%;
+  }
+  div.error-alert{
+    width: 80%;
+    font-size: 11px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /*///////////////////////////////////////posts#index*/
+  div.main-contents{
+    margin: 0px;
+    width: 100%;
+    display: block;
+  }
+  div.main{
+    width: 95%;
+    margin: 10px auto;
+  }
+  div.post-contents{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+  ul.post-lists{
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  ul.post-lists>.list{
+    flex-direction: column;
+    margin:  0 auto 40px ;
+    width: 95%;
+  }
+  div.post-info{
+    width: 100%;
+  }
+  /*///////////////////////////////////////posts#new*/
+  div.new-post-contents{
+    width: 95%;
+  }
+  div.new-post-contents h2{
+    font-size: 16px;
+  }
+  div.upload-text{
+    font-size: 12px;
+    margin: 0 0 10px;
+  }
+  div.click-upload{
+    font-size: 12px;
+  }
+  div.bold-text{
+    font-size: 12px;
+  }
+  input.post-text{
+    font-size: 12px;
+  }
+  textarea.post-text{
+    font-size: 12px;
+  }
+  select.select-box{
+    font-size: 12px;
+  }
+  input.post-btn{
+    font-size: 16px;
+  }
+  /*///////////////////////////////////////posts#show*/
+  p.post__heading{
+    font-size: 16px;
+  }
+  a.post__user{
+    font-size: 12px;
+  }
+  div.post__image{
+    width: 100%;
+    height: 200px;
+  }
+  div.post__image img{
+    width: 100%;
+    height: 200px;
+    padding: 5px;
+  }
+  div.post__body{
+    padding: 0px;
+  }
+
+  main.main_detail{
+    padding: 10px;
+  }
+  div.post__detail{
+    width: 100%;
+    display: block;
+    padding: 5px;
+  }
+  p.detail__title{
+    font-size: 12px;
+  }
+  p.detail__text{
+    width: 100%;
+    font-size: 12px;
+  }
+  div.comment-box{
+    width: 100%;
+  }
+  p.comment-warn{
+    font-size: 11px;
+  }
+  input.comment-btn{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  div.comment{
+    font-size: 12px;
+  }
+
+  /* ////////////////////////////////////post#search*/
+  div.container h1{
+    font-size: 16px;
+  }
+  div.container{
+    margin: 10px auto;
+  }
+  
+
+  /*///////////////////////////////////////users#show*/
+  div.user__wrapper{
+    width: 95%;
+  }
+  div.user__wrapper h2{
+    padding-top: 10px;
+  }
+  div.user-info{
+    display: block;
+  }
+  div.user-info01{
+    width: 100%
+  }
+  a.user--info{
+    font-size: 12px;
+    width: 50%;
+  }
+  div.user-info02{
+    width: 100%;
+  }
+  table.table{
+    width: 100%;
+    margin: 10px 0 10px;
+  }
+  th.table__col1{
+    font-size: 12px;
+    width: 30%;
+  }
+  td.table__col2{
+    font-size: 12px;
+    width: 70%;
+  }
+  div.user_icon img{
+    height: 100px;
+    width: 100px;
+    margin: 10px 0;
+  }
+  /*///////////////////////////////////////users#edit*/
+  div.form-header{
+    height: 80px;
+    margin-bottom:20px ;
+  }
+  div.form-header h2{
+    font-size: 16px;
+  }
+  div.form-group{
+    font-size: 12px;
+  }
+  /*///////////////////////////////////////notification#index*/
+  div.notification__wrapper{
+    width: 95%;
+    font-size: 12px;
+  }
+  div.notifications{
+    width: 100%;
+  }
+  div.notification_text{
+    padding-left: 10px;
+    margin-left: 5px;
+  }
+  div.user-index a{
+  width: 50px;
+  height: 50px;
+  }
+  a.profile-img-circle{
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ////////////////////////////////////grade#index*/
+  div.grade_lists{
+    width: 95%;
+  }
+  div.grade_lists h1{
+    width: 60%;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+  div.grade_lists h3{
+    font-size: 12px;
+    text-align: center;
+  }
+  div.category{
+    display: block;
+  }
+  ul.grades_parent{
+    width: 90%;
+  }
+  /* ////////////////////////////////////grade#show*/
+  div.category_container{
+    width: 95%;
+    margin: 0 auto;
+  }
+  div.post-index{
+    width: 60%;
+    font-size: 16px;
+    margin: 10px auto;
+  }
+
+  div.category_links{
+    width: 100%;
+  } 
+  a.category_link{
+    font-size: 12px;
+    margin: 0 5px;
+  }
+}
