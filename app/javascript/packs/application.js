@@ -5,7 +5,7 @@
 
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
-require("channels")
+//require("channels")
 require("../preview")
 require('jquery')
 require('../grade')
