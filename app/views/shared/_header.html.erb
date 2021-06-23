@@ -46,6 +46,9 @@
         <ul class='menu-list02'>
           <li class='menu-list02 menu-notification'>
             <%= link_to notifications_path do %>
+              <% if unchecked_notifications.any? %>
+                <i class="fas fa-circle"></i>
+              <% end %>
               <i class="far fa-bell fa-lg"></i>
               通　知
             <% end %>
@@ -117,4 +120,5 @@
     
     
   </div>
+
 </header>
