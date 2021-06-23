@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   root to: 'top#index'
   get 'top/about',as: 'about'
+  get 'top/news', as: 'news'
   get 'posts/search'
   get 'messages/index',to: 'messages#index'
   post 'messages/confirm',to: 'messages#confirm'

@@ -120,6 +120,14 @@ header{
   height: 20px;
 }
 
+.fa-circle{
+  position: absolute;
+  top: 300px;
+  left: 35px;
+  font-size: 0.8em;
+  color: #f66;
+}
+
 .menu-list02 a{
   display: block;
   background-color: #f3f3f3;
@@ -1158,4 +1166,26 @@ footer{
 .notification_comment{
   padding-left: 70px;
   text-align: left;
+}
+/*///////////////////////////////////新着情報一覧*/
+.news-text{
+  min-height: calc(100vh - 161px);
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+.news-title{
+  width: 50%;
+  margin: 20px auto;
+  font-size: 24px;
+  border-bottom: 3px solid #fea82f;
+}
+.news-list{
+  width: 60%;
+  margin: 0 auto;
+}
+.news-list li{
+  padding: 30px 30px 0;
+  border-bottom: 1px dotted #2f5d62;
 }
