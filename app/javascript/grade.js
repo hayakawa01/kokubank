@@ -37,7 +37,7 @@ $("#grade_form").on("change",function() {
       });
      })
      .fail(function(){
-        alert('カテゴリ取得に失敗しました');
+        alert('カテゴリ取得に失敗しました'　);
      });
    }else{
     $(".child_grade_id").remove();
