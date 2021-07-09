@@ -17,7 +17,7 @@ function add_Option(children) {
 }
 
 //親カテゴリを選択した後のイベント
-$("#grade_form").on("change",function() {
+$("#grade_form").on("change" ,function() {
   let parentValue = $("#grade_form").val();
   if(parentValue.length !== 0){
     $.ajax({
