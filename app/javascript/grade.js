@@ -29,7 +29,7 @@ $("#grade_form").on("change" , function() {
      .done(function (data) {
       $(".child_grade_id").remove();
       $(".grandchild_grade_id").remove();
-      let child_select_form = add_childSelect_tag
+      let child_select_form  = add_childSelect_tag
       $("#post_field").append(child_select_form);
       data.forEach(function(d) {
         let option_html = add_Option(d)
