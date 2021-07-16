@@ -27,7 +27,7 @@ $("#grade_form").on("change" , function() {
       dataType: 'json'
     })
      .done(function (data) {
-      $(".child_grade_id").remove();
+      $(".child_grade_id" ).remove();
       $(".grandchild_grade_id").remove();
       let child_select_form  = add_childSelect_tag
       $("#post_field").append(child_select_form);
