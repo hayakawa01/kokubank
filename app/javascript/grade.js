@@ -13,7 +13,7 @@ function add_Option(children) {
   let option_html = `
                     <option value=${children.id}>${children.name}</option>
                     `
-  return option_html;
+  return option_html ;
 }
 
 //親カテゴリを選択した後のイベント
